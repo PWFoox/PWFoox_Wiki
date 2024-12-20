@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Version-v0.8%20(alpha)-red" alt="Game Version">
+    <img src="https://img.shields.io/badge/Version-v0.8.0%20(alpha)-red" alt="Game Version">
     <img src="https://img.shields.io/badge/License-MIT-success" alt="License">
 </p>
 
