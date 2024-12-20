@@ -1,5 +1,5 @@
 <p align="center">
-      <img src="https://i.ibb.co/h88YWWy/Gitwiki.png" alt="Project Logo" width="726">
+      <img src=" " alt="Logo" width="715">
 </p>
 
 <p align="center">
