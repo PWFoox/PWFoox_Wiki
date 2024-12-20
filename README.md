@@ -1,12 +1,9 @@
 <p align="center">
-      <img src="https://i.ibb.co/VqywLfG/Photo.png" alt="Logo" width="715">
+      <img src="https://i.ibb.co/ctyhJYr/photo-new.png" alt="Logo" width="715">
 </p>
 
 <p align="center">
-    <img src="https://build.burning-lab.com/app/rest/builds/buildType:id:UnityAssets_ComBurningLabSwipedetector_DevelopmentBuild/statusIcon.svg" alt="Build Status">
-    <a href="https://burning-lab.youtrack.cloud/agiles/131-11/current"><img src="https://img.shields.io/badge/Roadmap-YouTrack-orange" alt="Roadmap Link"></a>
-    <img src="https://img.shields.io/badge/Engine-2021.3-blueviolet" alt="Unity Version">
-    <img src="https://img.shields.io/badge/Version-1.2.1-blue" alt="Game Version">
+    <img src="https://img.shields.io/badge/Version-v0.6%20(alpha)-red" alt="Game Version">
     <img src="https://img.shields.io/badge/License-MIT-success" alt="License">
 </p>
 
