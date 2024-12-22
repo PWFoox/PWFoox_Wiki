@@ -207,3 +207,8 @@ https://notepad-plus-plus.org/downloads/
 Убираем флаг с **"View Release Notes"**![[Убираем флаг с.png]]
 
 # Установка завершена!
+
+
+>P.S. Для использования Git
+>Нужно нажать правой кнопкой мыши в папке где хотите использовать git
+>и выбрать `Open Git Bash here`
