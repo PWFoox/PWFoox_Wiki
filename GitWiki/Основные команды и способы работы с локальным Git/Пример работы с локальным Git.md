@@ -52,10 +52,14 @@ git commit -m "Первый commint: add README.md"
 
 ![[git commit m Первый commint addREADME.png]]
 
-Визуализация для лучшего понимания
-
-![[Схема 1 первый коминт.png]]
-
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+```
 ## 2. Добавление кода и второй коммит
 
 ```bash
@@ -70,9 +74,15 @@ git status
 
 ![[git status.png]]
 
-Визуализация для лучшего понимания
-
-![[Схема 2 2 коминт.png]]
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+```
 ## 3. Внесение изменений в существующий файл
 
 ```bash
@@ -147,10 +157,18 @@ git log --oneline
 
 ![[Проверяем лог.png]]
 
-Визуализация для лучшего понимания
-
-![[Схема 3 новая ветка.png]]
-
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+```
 ## 5. Слияние веток
 
 > Термин: Слияние (merge) - процесс объединения изменений из разных веток в одну.
@@ -165,9 +183,21 @@ git merge feature/goodbye-function
 
 ![[Слияние веток.png]]
 
-Визуализация для лучшего понимания 
-
-![[Схема 3  слияние.png]]
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+   commit id: "Коминт 4"
+   checkout master
+   merge feature/goodbye
+```
 ## 6. Работа с конфликтами
 
 ```bash
@@ -215,9 +245,24 @@ git commit -m "Change"
 
 ![[Создаём коммит в первой ветке git commit -m Change.png]]
 
-Визуализация для лучшего понимания
-
-![[Схема 4 ветка new.png]]
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+   commit id: "Коминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+```
 
 ```bash
 # Переключаемся обратно в main
@@ -225,10 +270,6 @@ git checkout master
 ```
 
 ![[Переключаемся обратно в main git checkout master.png]]
-
-Визуализация для лучшего понимания
-
-![[Переключение на master.png]]
 
 ```bash
 # Создаём конфликтующие изменения в master
@@ -250,9 +291,26 @@ git commit -m "Change 2"
 
 ![[Создаём коммит в main git commit -m Change 2.png]]
 
-Визуализация для лучшего понимания
-
-![[commint we master.png]]
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+   commit id: "Коминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+```
 
 ```bash
 # Пытаемся слить ветку new в main
@@ -272,6 +330,7 @@ git status
 # Открываем файл и видим конфликт
 cat index.py
 ```
+
 ![[Открываем файл и видим конфликт cat index.py.png]]
 
 ```shell
@@ -285,9 +344,27 @@ printe("hi worled and hello world")
 
 > Термин: Конфликт - ситуация, когда Git не может автоматически объединить изменения из разных веток, требуется ручное разрешение.
 
-Визуализация для лучшего понимания
-
-![[Конфликт слияния.png]]
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+   commit id: "Коминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Конфлик" type: REVERSE
+```
 
 Признаки конфликта в файле:
 ```shell
@@ -346,9 +423,28 @@ git status
 
 ![[Проверяем, что все чисто git status.png]]
 
-Визуализация для лучшего понимания
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+   commit id: "Коминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Решение-слияния"
+```
 
-![[решение слияния.png]]
 ## 7. Просмотр истории
 
 ```bash
@@ -384,9 +480,27 @@ git show v1.0
 
 ![[Просмотр информации о конкретном теге git show v1.0.png]]
 
-Визуализация для лучшего понимания
-
-![[tag 1.0.png]]
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+   commit id: "Коминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Решение-слияния" tag: "v1.0"
+```
 
 ```bash
 # Создание легковесного тега
@@ -394,6 +508,28 @@ git tag v1.0-beta
 ```
 
 ![[Создание легковесного тега git tag v1.0-beta.png]]
+
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+   commit id: "Коминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Решение-слияния" tag: "v1.0 v1.0-beta"
+```
 
 ```bash
 # Просмотр тегов с шаблоном
@@ -409,9 +545,27 @@ git tag -a v0.9 5e0eeba -m "начало"
 
 ![[Создание тега для определённого коммита git tag -a v0.9 5e0eeba -m начало.png]]
 
-Визуализация для лучшего понимания
-
-![[tag 0.9.png]]
+```mermaid
+---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Коминт 1"
+   commit id: "Коминт 2" tag: "v0.9"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Коминт 3"
+   commit id: "Коминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Решение-слияния" tag: "v1.0"
+```
 
 ```bash
 # Удаление тега
@@ -434,20 +588,12 @@ git checkout v1.0
 
 ![[Поиск коммита по тегу git checkout v1.0.png]]
 
-Визуализация для лучшего понимания
-
-![[switch 1.0.png]]
-
 ```bash
 # Возврат к последнему состоянию master
 git checkout master
 ```
 
 ![[Возврат к последнему состоянию main git checkout main.png]]
-
-Визуализация для лучшего понимания
-
-![[switch master.png]]
 
 ```bash
 # Просмотр истории с тегами
