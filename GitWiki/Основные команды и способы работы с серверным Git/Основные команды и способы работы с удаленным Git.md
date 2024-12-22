@@ -13,6 +13,10 @@ git clone https://github.com/username/repository.git
 git config --global fetch.depth 1
 ```
 
+**Клонирование удаленного репозитория**:
+   - `git clone https://github.com/username/repository.git` - базовое клонирование репозитория, создает локальную копию удаленного репозитория.
+   - `git clone https://github.com/username/repository.git` и `git checkout -b branch-name origin/branch-name` - клонирование конкретной ветки, создает копию репозитория с указанной веткой.
+   - `git clone https://github.com/username/repository.git` и `git config --global fetch.depth 1` - клонирование с ограниченной историей, полезно для больших репозиториев.
 ## 2. Работа с удаленными репозиториями
 
 ```bash
@@ -32,6 +36,12 @@ git remote rename old-name new-name
 git remote show origin
 ```
 
+**Работа с удаленными репозиториями**:
+   - `git remote -v` - просмотр списка настроенных удаленных репозиториев с их URL.
+   - `git remote add origin https://github.com/username/repository.git` - добавление нового удаленного репозитория с именем "origin".
+   - `git remote remove origin` - удаление удаленного репозитория из списка.
+   - `git remote rename old-name new-name` - изменение имени удаленного репозитория.
+   - `git remote show origin` - просмотр подробной информации об удаленном репозитории.
 ## 3. Получение изменений с удаленного репозитория
 
 ```bash
@@ -49,6 +59,11 @@ git fetch origin
 git rebase origin/branch-name
 ```
 
+**Получение изменений с удаленного репозитория**:
+   - `git fetch origin` - получение всех изменений с удаленного репозитория без слияния.
+   - `git fetch origin branch-name` - получение изменений с определенной ветки удаленного репозитория.
+   - `git pull origin` - получение изменений и автоматическое слияние с текущей веткой.
+   - `git fetch origin` и `git rebase origin/branch-name` - получение изменений с перебазированием текущей ветки.
 ## 4. Отправка изменений в удаленный репозиторий
 
 ```bash
@@ -65,6 +80,11 @@ git push --force origin branch-name
 git push --all origin
 ```
 
+**Отправка изменений в удаленный репозиторий**:
+   - `git push origin` - отправка текущей ветки в удаленный репозиторий.
+   - `git push origin local-branch-name` - отправка определенной локальной ветки в удаленный репозиторий.
+   - `git push --force origin branch-name` - принудительная отправка изменений (использовать с осторожностью!).
+   - `git push --all origin` - отправка всех веток в удаленный репозиторий.
 ## 5. Работа с удаленными ветками
 
 ```bash
@@ -84,6 +104,12 @@ git branch --set-upstream-to=origin/remote-branch local-branch
 git push origin --delete remote-branch-name
 ```
 
+ **Работа с удаленными ветками**:
+   - `git branch --remotes` - просмотр только удаленных веток.
+   - `git branch --all` - просмотр всех веток (локальных и удаленных).
+   - `git checkout --track origin/remote-branch` - создание новой локальной ветки на основе удаленной.
+   - `git branch --set-upstream-to=origin/remote-branch local-branch` - привязка локальной ветки к удаленной для отслеживания.
+   - `git push origin --delete remote-branch-name` - удаление ветки в удаленном репозитории.
 ## 6. Работа с тегами на сервере
 
 ```bash
@@ -100,6 +126,11 @@ git push origin --tags
 git push origin --delete refs/tags/tag-name
 ```
 
+**Работа с тегами на сервере**:
+   - `git tag -a v1.0 -m "Version 1.0"` - создание аннотированного тега.
+   - `git push origin v1.0` - отправка конкретного тега в удаленный репозиторий.
+   - `git push origin --tags` - отправка всех локальных тегов в удаленный репозиторий.
+   - `git push origin --delete refs/tags/tag-name` - удаление тега в удаленном репозитории.
 ## 7. Работа с форками и Pull Request
 
 ```bash
@@ -151,6 +182,18 @@ git branch -d feature/new-feature
 git push origin --delete feature/new-feature
 ```
 
+**Работа с форками и Pull Request**:
+   - Создание форка происходит через веб-интерфейс GitHub/GitLab/Bitbucket.
+   - `git clone https://github.com/your-username/repository.git` - клонирование своего форка.
+   - `git remote add upstream https://github.com/original-owner/repository.git` - добавление оригинального репозитория как удаленного.
+   - `git remote -v` - проверка настроенных удаленных репозиториев.
+   - `git checkout -b feature/new-feature` - создание новой ветки для работы над функционалом.
+   - `git fetch upstream` - получение последних изменений из оригинального репозитория.
+   - `git checkout main` и `git merge upstream/main` - обновление главной ветки локального репозитория.
+   - `git checkout feature/new-feature` и `git merge main` - обновление ветки feature относительно обновленной main.
+   - `git add .`, `git commit -m "..."` и `git push origin feature/new-feature` - внесение изменений, создание коммита и отправка ветки в свой форк.
+   - `git push origin feature/new-feature` - обновление существующего Pull Request.
+   - `git checkout main`, `git branch -d feature/new-feature` и `git push origin --delete feature/new-feature` - удаление локальной и удаленной ветки после принятия Pull Request.
 ### Рекомендации по работе с форками и Pull Request:
 
 1. Структура сообщений коммитов:
@@ -200,7 +243,7 @@ git merge upstream/main
 git push origin main
 ```
 
-6. Разрешение конфликтов:
+6. Разрешение конфликтов: ^8e7f7b
 ```bash
 # При возникновении конфликтов
 git fetch upstream
