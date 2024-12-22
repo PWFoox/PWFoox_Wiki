@@ -119,7 +119,7 @@ git checkout master
 git merge feature/goodbye-function
 ```
 
-![[GitWiki/Исходники/Исходники Пример работы/Слияние веток.png]]
+![[Слияние веток.png]]
 
 ## 6. Работа с конфликтами
 
