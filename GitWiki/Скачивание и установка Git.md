@@ -2,10 +2,10 @@
 ```
 https://git-scm.com/downloads/win
 ```
-![[Pasted image 20241218211415.png]]
+![[Переходим на ссылку.png]]
 
 ### 2. В зависимости от версии Windows выбираем нужную версию
-![[Pasted image 20241218212336.png]]
+![[В зависимости от версии Windows выбираем нужную версию.png]]
 
 | Для 64-битной системы        | Для 32-битной системы        |
 | ---------------------------- | ---------------------------- |
@@ -13,7 +13,7 @@ https://git-scm.com/downloads/win
 *(Чтобы узнать версию Windows, нажмите Win + R, введите `cmd` и нажмите Enter, далее вставьте команду `wmic OS get OSArchitecture` и нажмите Enter)*
 
 ### 3. Запускаем установку
-- После скачивания находим файл в папке "Загрузки"![[{59D327E1-EEF2-48C4-B0E3-DA7C22ED91EA}.png]]
+- После скачивания находим файл в папке "Загрузки"![[Запускаем установку.png]]
 - Двойным щелчком запускаем установщик Git
 - При появлении предупреждения безопасности нажимаем **"Да"**
 
@@ -25,7 +25,7 @@ https://git-scm.com/downloads/win
    - Нажимаем **"Next"**![[next_2 3.png]]
 
 ### 5. Выбор компонентов
-Выберите следующие компоненты:![[{05D42745-2206-4445-BD0B-64F66F0330D0}.png]]
+Выберите следующие компоненты:![[Выбор компонентов.png]]
 
 1. Windows Explorer integration
    - Open Git Bash here
@@ -67,7 +67,7 @@ https://notepad-plus-plus.org/downloads/
 После выбора редактора нажимаем **"Next"**![[notepad_3.png]]
 
 ### 7. Настройка имени основной ветки
-![[{7D1A817C-6DB8-4139-B442-4C1F425A5A29}.png]]
+![[Настройка имени основной ветки.png]]
 Доступны два варианта:
 
 1. Let Git decide
@@ -81,7 +81,7 @@ https://notepad-plus-plus.org/downloads/
 Нажимаем **"Next"**![[master.png]]
 
 ### 8. Настройка PATH
-![[{13FFC608-8C8C-4A98-8FAC-6D64263E7A50}.png]]
+![[Настройка PATH.png]]
 Доступны три варианта:
 
 1. Use Git from Git Bash only
@@ -98,7 +98,7 @@ https://notepad-plus-plus.org/downloads/
 Нажимаем **"Next"**![[PATH 1.png]]
 
 ### 9. Выбор SSH клиента
-![[{EA98BEAF-AF00-48BE-B25D-39F0C37CB77F}.png]]
+![[Выбор SSH клиента.png]]
 Доступны два варианта:
 
 1. Use bundled OpenSSH
@@ -112,7 +112,7 @@ https://notepad-plus-plus.org/downloads/
 Нажимаем **"Next"**![[SSH.png]]
 
 ### 10. Выбор SSL/TLS библиотеки
-![[{0EE8F817-B0FF-4D0B-8F39-297DB8FC9738}.png]]
+![[Выбор SSL-TLS библиотеки.png]]
 Доступны два варианта:
 
 1. Use the OpenSSL library 
@@ -126,7 +126,7 @@ https://notepad-plus-plus.org/downloads/
 Нажимаем **"Next"**![[SSL_TLS.png]]
 
 ### 11. Настройка окончаний строк
-![[{82DB3388-4E8D-4792-B792-76E82D833325}.png]]
+![[Настройка окончаний строк.png]]
 Доступны три варианта:
 
 1. Checkout Windows-style, commit Unix-style line endings
@@ -143,7 +143,7 @@ https://notepad-plus-plus.org/downloads/
 Нажимаем **"Next"**![[text.png]]
 
 ### 12. Выбор терминального эмулятора
-![[{7999EF53-9128-4724-BCFA-637363F4D2BF}.png]]
+![[Выбор терминального эмулятора.png]]
 Доступны два варианта:
 
 1. Use MinTTY (the default terminal of MSYS2)
@@ -157,7 +157,7 @@ https://notepad-plus-plus.org/downloads/
 Нажимаем **"Next"**![[terminal.png]]
 
 ### 13. Настройка поведения команды 'git pull'
-![[{15404541-6CC0-400C-A6D3-56A564795714}.png]]
+![[Настройка поведения команды 'git pull'.png]]
 Доступны три варианта:
 
 1. Fast-forward or merge
@@ -174,7 +174,7 @@ https://notepad-plus-plus.org/downloads/
 Нажимаем **"Next"**![[git_pull.png]]
 
 ### 14. Выбор помощника учетных данных
-![[{D95F9324-8B80-4A96-9C04-1C0A22737A65}.png]]
+![[Выбор помощника учетных данных.png]]
 Доступны два варианта:
 
 1. Git Credential Manager
@@ -188,7 +188,7 @@ https://notepad-plus-plus.org/downloads/
 Нажимаем **"Next"**![[configured.png]]
 
 ### 15. Настройка дополнительных опций
-![[{1B48E930-F1CA-43E8-87AF-BD5B56A53F75}.png]]
+![[Настройка дополнительных опций.png]]
 Доступны две опции:
 
 1. Enable file system caching
@@ -203,7 +203,7 @@ https://notepad-plus-plus.org/downloads/
 
 ---
 После нажатия кнопки **"Install"** ожидаем установки
-![[{3745B05A-C558-4852-A1FE-3525A6678942}.png]]
-Убираем флаг с **"View Release Notes"**![[{01C248CC-CBEA-4E8D-86F7-EF881D87BB7F}.png]]
+![[ожидаем установки.png]]
+Убираем флаг с **"View Release Notes"**![[Убираем флаг с.png]]
 
 # Установка завершена!

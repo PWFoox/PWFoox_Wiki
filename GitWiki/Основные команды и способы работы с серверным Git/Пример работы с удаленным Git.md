@@ -5,7 +5,7 @@
 git clone https://github.com/username/repository.git
 ```
 
-![[{DA4A87B1-F7A8-4C74-9998-4D34A1FDD74F}.png]]
+![[Начальная настройка и клонирование.png]]
 
 ```bash
 # Переходим в директорию проекта
@@ -15,7 +15,7 @@ cd repository
 git status
 ```
 
-![[{C7BDE752-AC17-4B98-9AC8-8392A290ECEB}.png]]
+![[Проверяем статус репозитория.png]]
 ## 2. Создание новой ветки и внесение изменений
 
 ```bash
@@ -26,7 +26,7 @@ git checkout -b feature/new-feature
 git branch
 ```
 
-![[{E60BF739-ECD2-4807-8FB7-6B8701218047}.png]]
+![[Создание новой ветки и внесение изменений.png]]
 
 ```bash
 # Вносим изменения в файлы
@@ -36,7 +36,7 @@ echo "New feature code" > feature.txt
 git status
 ```
 
-![[{EC504ABA-ED48-424E-BF8C-F78375620B12}.png]]
+![[Вносим изменения в файлы echo New feature code  feature.txt.png]]
 ## 4. Фиксация изменений
 
 ```bash
@@ -50,7 +50,7 @@ git commit -m "feat: добавлен новый функционал"
 git log --oneline
 ```
 
-![[{8465798C-7783-4C17-BB27-A4E9051C206D}.png]]
+![[Фиксация изменений.png]]
 ## 5. Синхронизация с удаленным репозиторием
 
 ```bash
@@ -61,7 +61,7 @@ git fetch origin
 git log HEAD..origin/main --oneline
 ```
 
-![[{BEAE9F2A-D219-4712-A625-B3F5A3DC0952}.png]]
+![[Синхронизация с удаленным репозиторием.png]]
 
 ```bash
 # Обновляем основную ветку
@@ -72,7 +72,7 @@ git pull origin main
 git checkout feature/new-feature
 ```
 
-![[{BDA9C12B-8093-4ED3-98B4-DEDC717F739D}.png]]
+![[Возвращаемся в ветку с функционалом git checkout feature-new-feature.png]]
 ## 6. Отправка изменений в удаленный репозиторий
 
 ```bash
@@ -80,7 +80,7 @@ git checkout feature/new-feature
 git push -u origin feature/new-feature
 ```
 
-![[{580CAABA-AB1A-4FEE-8DAE-BD3A540B1068}.png]]
+![[Отправка изменений в удаленный репозиторий.png]]
 
 ## 7. После создания Pull Request
 
@@ -96,7 +96,7 @@ git commit -m "fix: внесены правки по результатам code
 git push origin feature/new-feature
 ```
 
-![[{B35B9023-6EC6-4CEB-A453-F9ABC1B98E6F}.png]]
+![[После создания Pull Request.png]]
 
 ## 8. Разрешение конфликтов
 
@@ -105,14 +105,14 @@ git push origin feature/new-feature
 git merge main
 ```
 
-![[{FFC2777B-7109-499B-B8E8-E8FC02C8AAC2}.png]]
+![[Разрешение конфликтов.png]]
 
 ```bash
 # Открываем конфликтующий файл
 cat feature.txt
 ```
 
-![[{5EBA5233-8DC5-4630-8625-03FD09919079}.png]]
+![[Открываем конфликтующий файл cat feature.txt.png]]
 
 ```bash
 # После решения конфликта
@@ -121,7 +121,7 @@ git commit -m "resolve: разрешение конфликта слияния"
 git push origin feature/new-feature
 ```
 
-![[{A3E4847F-1DC9-495D-923F-B89624CE0027}.png]]
+![[git commit -m resolve разрешение конфликта слияния.png]]
 
 ## 9. Завершение работы
 
@@ -133,7 +133,7 @@ git branch -d feature/new-feature
 git push origin --delete feature/new-feature
 ```
 
-![[{7D46380F-19A2-4FDB-9102-F0FD242060CB}.png]]
+![[Завершение работы.png]]
 
 ## 10. Итоговое состояние
 
