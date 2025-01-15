@@ -57,7 +57,7 @@
 
 ## Лицензия
 
-Этот проект распространяется под лицензией [MIT](https://github.com/PWFoox/GitWiki/blob/main/LICENSE.txt).
+Этот проект распространяется под лицензией [MIT](https://github.com/PWFoox/GitWiki/blob/main/docs/LICENSE.md).
 
 > [!CAUTION]
 > Для работы с заметками, представленными в этом репозитории, требуется программа Obsidian.  
