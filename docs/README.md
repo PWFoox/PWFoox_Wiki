@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/Version-v1.2.0%20(beta)-orange" alt="Game Version">
-    <img src="https://img.shields.io/badge/License-MIT-success" alt="License">
+    <img src="https://img.shields.io/badge/License-PWFL-success" alt="License">
 </p>
 
 > [!TIP]  
@@ -14,12 +14,14 @@
 
 > [!NOTE]  
 > Git - это распределенная система контроля версий, которая позволяет эффективно управлять изменениями в файлах проекта. Она обеспечивает возможность совместной работы, отслеживание истории изменений, ветвление и многое другое.
+## Быстрый старт
+- [Инструкция по установке](https://github.com/PWFoox/GitWiki/blob/main/docs/INSTALLATION.md)
+- [Начало работы](https://github.com/PWFoox/GitWiki/blob/main/docs/USER_GUIDE.md)
 
 В этом разделе вы найдете:
 - Основные понятия Git
 - Инструкции по установке и настройке Git
 - Руководство по использованию Git-платформы
-
 ### Основные команды и способы работы с локальным Git
 
 Данный раздел содержит подробное описание базовых команд и принципов работы с локальным Git-репозиторием. Вы узнаете, как:
@@ -57,7 +59,7 @@
 
 ## Лицензия
 
-Этот проект распространяется под лицензией [MIT](https://github.com/PWFoox/GitWiki/blob/main/docs/LICENSE.md).
+Этот проект распространяется под лицензией [PWFL](https://github.com/PWFoox/GitWiki/blob/main/docs/LICENSE).
 
 > [!CAUTION]
 > Для работы с заметками, представленными в этом репозитории, требуется программа Obsidian.  
