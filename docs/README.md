@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Version-v1.2.0%20(beta)-orange" alt="Game Version">
+    <img src="https://img.shields.io/badge/Version-v1.2.5%20(beta)-orange" alt="Game Version">
     <img src="https://img.shields.io/badge/License-PWFL-success" alt="License">
 </p>
 
