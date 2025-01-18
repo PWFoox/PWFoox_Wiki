@@ -1,6 +1,6 @@
 application:
   name: "GitWiki"
-  version: "1.2.0"
+  version: "1.2.5"
   version type: "BETA"
-  release date: "15.01.2025"
+  release date: "19.01.2025"
   description: "GitWiki - вики по установке и использованию Git на Windows"
