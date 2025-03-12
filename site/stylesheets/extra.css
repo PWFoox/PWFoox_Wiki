@@ -1,0 +1,127 @@
+/* ============================== */
+/* Глобальные переменные и фон */
+/* ============================== */
+:root {
+  /* Основные цвета */
+  --md-default-bg-color: #0d1117;     /* Основной фон */
+  --md-default-fg-color: #c9d1d9;      /* Основной текст */
+  --md-primary-fg-color: #238636;      /* Акцентные элементы (кнопки, заголовки) */
+  --md-accent-fg-color: #3fb950;       /* Ховер-эффекты */
+
+  /* Цвета кода */
+  --md-code-bg-color: #161b22;         /* Фон блоков кода */
+  --md-code-fg-color: #c9d1d9;         /* Текст в блоках кода */
+
+  /* Ссылки */
+  --md-typeset-a-color: #58a6ff;       /* Обычные ссылки */
+  --md-typeset-a-hover-color: #79c0ff; /* Ховер ссылок */
+}
+
+/* ============================== */
+/* Базовые элементы */
+/* ============================== */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+.md-main {
+  background-color: var(--md-default-bg-color) !important;
+}
+
+/* ============================== */
+/* Заголовки */
+/* ============================== */
+.md-typeset h1 {
+  color: #f0f6fc;
+  border-bottom: 2px solid #30363d;
+  padding-bottom: 0.5rem;
+}
+
+.md-typeset h2 {
+  color: #e3e8ee;
+  margin-top: 2rem;
+}
+
+/* ============================== */
+/* Блоки кода */
+/* ============================== */
+.md-typeset pre {
+  background: var(--md-code-bg-color);
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin: 1.5rem 0;
+}
+
+.highlight {
+  /* Подсветка синтаксиса GitHub Dark */
+  --md-code-hl-keyword-color: #ff7b72;    /* Ключевые слова */
+  --md-code-hl-string-color: #a5d6ff;     /* Строки */
+  --md-code-hl-number-color: #79c0ff;     /* Числа */
+  --md-code-hl-function-color: #d2a8ff;   /* Функции */
+  --md-code-hl-comment-color: #8b949e;    /* Комментарии */
+}
+
+/* ============================== */
+/* Информационные блоки */
+/* ============================== */
+.info-box {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================== */
+/* Навигация и вкладки */
+/* ============================== */
+.md-tabs {
+  background: linear-gradient(90deg, #0d1117 0%, #161b22 100%);
+  border-bottom: 1px solid #30363d;
+}
+
+.md-nav__link--active {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 600;
+}
+
+/* ============================== */
+/* Кнопки */
+/* ============================== */
+.md-typeset .md-button {
+  background: #238636;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.md-typeset .md-button:hover {
+  background: #2ea043;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(35, 134, 54, 0.3);
+}
+
+/* ============================== */
+/* Иконки FontAwesome */
+/* ============================== */
+.md-typeset .fa-regular,
+.md-typeset .fa-solid {
+  color: #58a6ff;
+  margin-right: 0.5rem;
+}
+
+/* Цвета для Mermaid */
+.mermaid {
+  --mermaid-theme: dark;
+  --mermaid-edge-label-bg: #0d1117;
+  --mermaid-node-bg: #238636;
+  --mermaid-text-color: #c9d1d9;
+}
+
+/* Центрирование диаграмм */
+.mermaid {
+  text-align: center;
+  margin: 2rem 0;
+}
