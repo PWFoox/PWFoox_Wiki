@@ -1,159 +1,114 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 
-/* ============================== */
-/* Глобальные переменные и фон */
-/* ============================== */
+/* ======================== */
+/* Глобальные переменные */
+/* ======================== */
 :root {
-  /* Основные цвета */
-  --md-default-bg-color: #0d1117;
-  --md-default-fg-color: #c9d1d9;
-  --md-primary-fg-color: #238636;
-  --md-accent-fg-color: #3fb950;
-
-  /* Цвета кода */
-  --md-code-bg-color: #161b22;
-  --md-code-fg-color: #c9d1d9;
-
-  /* Ссылки */
-  --md-typeset-a-color: #58a6ff;
-  --md-typeset-a-hover-color: #79c0ff;
+  --md-default-bg-color: #0d1117;    /* Основной фон */
+  --md-default-fg-color: #c9d1d9;    /* Цвет текста */
+  --md-primary-fg-color: #238636;    /* Основной акцент (зелёный) */
+  --md-accent-fg-color: #3fb950;     /* Вторичный акцент */
+  --md-code-bg-color: #161b22;       /* Фон блоков кода */
 }
 
-/* ============================== */
-/* Базовые элементы */
-/* ============================== */
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-}
-
-.md-main {
-  background-color: var(--md-default-bg-color) !important;
-}
-
-/* ============================== */
-/* Заголовки */
-/* ============================== */
-.md-typeset h1 {
-  color: #f0f6fc;
-  border-bottom: 2px solid #30363d;
-  padding-bottom: 0.5rem;
-}
-
-.md-typeset h2 {
-  color: #e3e8ee;
-  margin-top: 2rem;
-}
-
-/* ============================== */
-/* Блоки кода */
-/* ============================== */
-.md-typeset pre {
-  background: var(--md-code-bg-color);
-  border: 1px solid #30363d;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  margin: 1.5rem 0;
-}
-
-.highlight {
-  --md-code-hl-keyword-color: #ff7b72;
-  --md-code-hl-string-color: #a5d6ff;
-  --md-code-hl-number-color: #79c0ff;
-  --md-code-hl-function-color: #d2a8ff;
-  --md-code-hl-comment-color: #8b949e;
-}
-
-/* ============================== */
-/* Callouts (Admonitions) */
-/* ============================== */
+/* ======================== */
+/* Информационные блоки (Admonitions) */
+/* ======================== */
 .md-typeset .admonition {
-  border: 2px solid;
-  border-radius: 8px;
+  border-left: 4px solid;
+  background: rgba(255, 255, 255, 0.03);
   margin: 1.5rem 0;
-  padding: 1rem 1.5rem 1rem 4rem;
+  padding: 1.2rem 1.5rem 1.2rem 4.5rem;
   position: relative;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .md-typeset .admonition::before {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 1.8em;
   position: absolute;
   left: 1.5rem;
   top: 1.2rem;
 }
 
-/* Note */
+.md-typeset .admonition-title {
+  display: none !important;
+}
+
+/* Note (синий) */
 .md-typeset .admonition.note {
   border-color: #2f81f7;
-  background: rgba(47, 129, 247, 0.1);
+  background: rgba(47, 129, 247, 0.08);
 }
 .md-typeset .admonition.note::before {
-  content: "\f05a"; /* Иконка info-circle */
+  content: "\f05a"; /* info-circle */
   color: #2f81f7;
 }
 
-/* Tip */
+/* Tip (зелёный) */
 .md-typeset .admonition.tip {
   border-color: #3fb950;
-  background: rgba(63, 185, 80, 0.1);
+  background: rgba(63, 185, 80, 0.08);
 }
 .md-typeset .admonition.tip::before {
-  content: "\f0eb"; /* Иконка lightbulb */
+  content: "\f0eb"; /* lightbulb */
   color: #3fb950;
 }
 
-/* Important */
-.md-typeset .admonition.important {
-  border-color: #9147ff;
-  background: rgba(145, 71, 255, 0.1);
-}
-.md-typeset .admonition.important::before {
-  content: "\f06a"; /* Иконка exclamation-circle */
-  color: #9147ff;
-}
-
-/* Warning */
+/* Warning (оранжевый) */
 .md-typeset .admonition.warning {
   border-color: #ff9f1c;
-  background: rgba(255, 159, 28, 0.1);
+  background: rgba(255, 159, 28, 0.08);
 }
 .md-typeset .admonition.warning::before {
-  content: "\f071"; /* Иконка exclamation-triangle */
+  content: "\f071"; /* exclamation-triangle */
   color: #ff9f1c;
 }
 
-/* ============================== */
-/* Навигация */
-/* ============================== */
-.md-tabs {
-  background: linear-gradient(90deg, #0d1117 0%, #161b22 100%);
-  border-bottom: 1px solid #30363d;
+.md-typeset pre {
+  background: #000 !important; 
+  border: 1px solid #333 !important;
 }
 
+/* Фон внутренней части (где текст) */
+.md-typeset pre code {
+  background: #211d1d !important; 
+  color: #fff !important; /* Белый текст */
+}
+
+/* Номера строк */
+.linenos {
+  color: #666 !important;
+  border-right: 1px solid #333 !important;
+}
+
+/* Подсветка строк */
+.hll {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-left: 3px solid #fff !important;
+}
+
+/* ======================== */
+/* Навигация */
+/* ======================== */
 .md-nav__link--active {
   color: var(--md-primary-fg-color) !important;
   font-weight: 600;
 }
 
-/* ============================== */
-/* Mermaid */
-/* ============================== */
-.mermaid {
-  --mermaid-theme: dark;
-  --mermaid-edge-label-bg: #0d1117;
-  --mermaid-node-bg: #238636;
-  --mermaid-text-color: #c9d1d9;
-  text-align: center;
-  margin: 2rem 0;
+.md-tabs {
+  border-bottom: 1px solid #30363d;
+  background: linear-gradient(90deg, #0d1117 0%, #161b22 100%);
 }
 
-/* ============================== */
+/* ======================== */
 /* Изображения */
-/* ============================== */
+/* ======================== */
 .md-typeset img {
   border-radius: 8px;
+  border: 1px solid #30363d;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
