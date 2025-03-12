@@ -59,4 +59,8 @@ nav:
     - Дополнительно:
       - "Рекомендации по ведению репозитория": Git-system/Дополнительно/Рекомендации по ведению репозитория.md
   - Инструменты разработки:
-      - "MVS Code": DevOps/MVS Code/MVS Code.md
+      - "VS Code":
+          - "Введение в VS Code":
+              - "Что такое VS Code?": DevOps/VS Code/Что такое VS Code.md
+          - "Установка и настройка VS Code":
+              - "Скачивание и установка VS Code": DevOps/VS Code/Скачивание и установка VS Code.md

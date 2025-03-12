@@ -67,14 +67,11 @@
   color: #ff9f1c;
 }
 
-.md-typeset pre {
-  background: #000 !important; 
-  border: 1px solid #333 !important;
-}
 
 /* Фон внутренней части (где текст) */
 .md-typeset pre code {
-  background: #211d1d !important; 
+  border-radius: 9px;
+  background: #211d1d !important;
   color: #fff !important; /* Белый текст */
 }
 
@@ -88,6 +85,11 @@
 .hll {
   background: rgba(255, 255, 255, 0.1) !important;
   border-left: 3px solid #fff !important;
+}
+
+/* Плавная анимация подсветки */
+.highlight .linenums li {
+  transition: background 0.3s ease;
 }
 
 /* ======================== */
