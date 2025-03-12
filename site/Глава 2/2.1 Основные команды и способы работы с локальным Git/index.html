@@ -1084,151 +1084,151 @@
   <h1>2.1 Основные команды и способы работы с локальным Git</h1>
 
 <h2 id="1">1. Инициализация репозитория</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Создание нового репозитория</span>
-git<span class="w"> </span>init
-
-<span class="c1"># Проверка статуса репозитория</span>
-git<span class="w"> </span>status
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Создание нового репозитория</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>init
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Проверка статуса репозитория</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>status
 </code></pre></div>
 <p>Команда <code>git init</code> создает новый Git-репозиторий в текущей директории. Это инициализирует Git-систему управления версиями для текущего проекта. После этого можно начинать отслеживать изменения файлов.</p>
 <p>Команда <code>git status</code> показывает текущее состояние рабочей директории и индекса. Она отображает, какие файлы были изменены, добавлены или удалены, а также какие файлы еще не отслеживаются Git'ом.</p>
 <h2 id="2">2. Работа с файлами и индексом</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Добавление файла в индекс</span>
-git<span class="w"> </span>add<span class="w"> </span>filename.txt
-
-<span class="c1"># Добавление всех файлов</span>
-git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>add<span class="w"> </span>--all
-
-<span class="c1"># Добавление файлов по маске</span>
-git<span class="w"> </span>add<span class="w"> </span>*.js
-
-<span class="c1"># Удаление файла из индекса</span>
-git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>filename.txt
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Добавление файла в индекс</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>add<span class="w"> </span>filename.txt
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Добавление всех файлов</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>git<span class="w"> </span>add<span class="w"> </span>--all
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Добавление файлов по маске</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>git<span class="w"> </span>add<span class="w"> </span>*.js
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># Удаление файла из индекса</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>filename.txt
 </code></pre></div>
 <p>Команда <code>git add</code> добавляет файлы в индекс (staging area) Git'а. Индекс - это область, где Git собирает изменения перед созданием коммита. Команда <code>git add .</code> добавляет все измененные файлы в индекс, а <code>git add --all</code> добавляет все файлы, включая новые и удаленные.</p>
 <p>Команда <code>git rm --cached</code> удаляет файл из индекса, но сохраняет его в рабочей директории. Это позволяет убрать файл из следующего коммита, не удаляя его физически.</p>
 <h2 id="3">3. Создание коммитов</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Создание коммита с сообщением</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Описание изменений&quot;</span>
-
-<span class="c1"># Добавление файлов в индекс и создание коммита</span>
-git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;Описание изменений&quot;</span>
-
-<span class="c1"># Изменение последнего коммита</span>
-git<span class="w"> </span>commit<span class="w"> </span>--amend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Создание коммита с сообщением</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Описание изменений&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Добавление файлов в индекс и создание коммита</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;Описание изменений&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Изменение последнего коммита</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>git<span class="w"> </span>commit<span class="w"> </span>--amend
 </code></pre></div>
 <p>Команда <code>git commit</code> создает новый коммит из изменений, находящихся в индексе. Ключ <code>-m</code> позволяет добавить сообщение к коммиту, описывающее внесенные изменения.</p>
 <p>Команда <code>git commit -am</code> одновременно добавляет все измененные файлы в индекс и создает новый коммит.</p>
 <p>Команда <code>git commit --amend</code> позволяет изменить последний созданный коммит. Это может быть полезно, если нужно исправить ошибку в сообщении коммита или добавить забытые изменения.</p>
 <h2 id="4">4. Просмотр истории</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Просмотр истории коммитов</span>
-git<span class="w"> </span>log
-
-<span class="c1"># Компактный вид истории</span>
-git<span class="w"> </span>log<span class="w"> </span>--oneline
-
-<span class="c1"># История с графическим отображением веток</span>
-git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--oneline<span class="w"> </span>--decorate
-
-<span class="c1"># Просмотр изменений в файлах</span>
-git<span class="w"> </span>diff
-git<span class="w"> </span>diff<span class="w"> </span>filename.txt
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Просмотр истории коммитов</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>log
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Компактный вид истории</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># История с графическим отображением веток</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--oneline<span class="w"> </span>--decorate
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># Просмотр изменений в файлах</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>git<span class="w"> </span>diff
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>git<span class="w"> </span>diff<span class="w"> </span>filename.txt
 </code></pre></div>
 <p>Команда <code>git log</code> показывает историю всех коммитов в репозитории. Ключ <code>--oneline</code> сжимает вывод, показывая каждый коммит в одной строке. Ключ <code>--graph</code> добавляет графическое отображение веток, а <code>--decorate</code> показывает ссылки, такие как ветки и теги.</p>
 <p>Команда <code>git diff</code> показывает различия между текущим состоянием рабочей директории и индекса. Можно указать конкретный файл, чтобы увидеть изменения только в нем.</p>
 <h2 id="5">5. Работа с ветками</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Создание новой ветки</span>
-git<span class="w"> </span>branch<span class="w"> </span>branch-name
-
-<span class="c1"># Переключение на ветку</span>
-git<span class="w"> </span>checkout<span class="w"> </span>branch-name
-
-<span class="c1"># Создание и переключение одной командой</span>
-git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>new-branch
-
-<span class="c1"># Просмотр списка веток</span>
-git<span class="w"> </span>branch
-
-<span class="c1"># Удаление ветки</span>
-git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>branch-name
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Создание новой ветки</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>branch<span class="w"> </span>branch-name
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Переключение на ветку</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>git<span class="w"> </span>checkout<span class="w"> </span>branch-name
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Создание и переключение одной командой</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>new-branch
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Просмотр списка веток</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>git<span class="w"> </span>branch
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Удаление ветки</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>branch-name
 </code></pre></div>
 <p>Ветки в Git - это легковесные указатели на определенные коммиты. Они используются для изолированной разработки новых функций или исправления ошибок. </p>
 <p>Команда <code>git branch</code> создает новую ветку с указанным именем. Команда <code>git checkout</code> позволяет переключаться между ветками. Ключ <code>-b</code> одновременно создает и переключается на новую ветку.</p>
 <p>Команда <code>git branch -d</code> удаляет ветку, если она уже была слита с другой веткой. Ключ <code>-D</code> позволяет принудительно удалить ветку, даже если она не была слита.</p>
 <h2 id="6">6. Слияние веток</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Слияние указанной ветки в текущую</span>
-git<span class="w"> </span>merge<span class="w"> </span>branch-name
-
-<span class="c1"># Отмена слияния в процессе конфликта</span>
-git<span class="w"> </span>merge<span class="w"> </span>--abort
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Слияние указанной ветки в текущую</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>merge<span class="w"> </span>branch-name
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Отмена слияния в процессе конфликта</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>git<span class="w"> </span>merge<span class="w"> </span>--abort
 </code></pre></div>
 <p>Команда <code>git merge</code> объединяет изменения из указанной ветки в текущую ветку. Это позволяет интегрировать наработки из отдельных веток обратно в основную ветку разработки.</p>
 <p>Если при слиянии возникают конфликты (Git не может автоматически объединить изменения), можно использовать <code>git merge --abort</code> для отмены процесса слияния.</p>
 <h2 id="7">7. Отмена изменений</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Отмена изменений в рабочей директории</span>
-git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>filename.txt
-
-<span class="c1"># Отмена изменений в индексе</span>
-git<span class="w"> </span>reset<span class="w"> </span>HEAD<span class="w"> </span>filename.txt
-
-<span class="c1"># Отмена последнего коммита с сохранением изменений</span>
-git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD^
-
-<span class="c1"># Полная отмена последнего коммита</span>
-git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^
-
-<span class="c1"># Создание нового коммита, отменяющего изменения</span>
-git<span class="w"> </span>revert<span class="w"> </span>commit-hash
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Отмена изменений в рабочей директории</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>filename.txt
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Отмена изменений в индексе</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD<span class="w"> </span>filename.txt
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Отмена последнего коммита с сохранением изменений</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD^
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># Полная отмена последнего коммита</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># Создание нового коммита, отменяющего изменения</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>git<span class="w"> </span>revert<span class="w"> </span>commit-hash
 </code></pre></div>
 <p>Команда <code>git checkout -- filename.txt</code> отменяет все изменения в указанном файле, восстанавливая его состояние из последнего коммита.</p>
 <p>Команда <code>git reset HEAD filename.txt</code> убирает файл из индекса, но сохраняет изменения в рабочей директории.</p>
 <p>Команда <code>git reset --soft HEAD^</code> отменяет последний коммит, но сохраняет изменения в индексе и рабочей директории. Ключ <code>--hard</code> полностью удаляет последний коммит и все изменения.</p>
 <p>Команда <code>git revert commit-hash</code> создает новый коммит, который отменяет изменения указанного коммита. Это безопасный способ отмены изменений, так как сохраняется история.</p>
 <h2 id="8-tags">8. Работа с метками (tags)</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Создание легковесной метки</span>
-git<span class="w"> </span>tag<span class="w"> </span>v1.0
-
-<span class="c1"># Создание аннотированной метки</span>
-git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Version 1.0&quot;</span>
-
-<span class="c1"># Просмотр меток</span>
-git<span class="w"> </span>tag
-
-<span class="c1"># Удаление метки</span>
-git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>v1.0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Создание легковесной метки</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>tag<span class="w"> </span>v1.0
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Создание аннотированной метки</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Version 1.0&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Просмотр меток</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>git<span class="w"> </span>tag
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># Удаление метки</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>v1.0
 </code></pre></div>
 <p>Метки (tags) в Git используются для присвоения символьных имен определенным коммитам. Это позволяет легко ссылаться на важные точки в истории проекта, например, на релизы.</p>
 <p>Команда <code>git tag</code> создает новую метку. Ключ <code>-a</code> создает аннотированную метку, которая хранит дополнительную информацию, такую как автор и дата создания. Ключ <code>-m</code> позволяет добавить сообщение к метке.</p>
 <p>Команда <code>git tag</code> без аргументов показывает список всех существующих меток. Команда <code>git tag -d</code> удаляет указанную метку.</p>
 <h2 id="9-stash">9. Сохранение изменений во временное хранилище (stash)</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Сохранение текущих изменений</span>
-git<span class="w"> </span>stash
-
-<span class="c1"># Просмотр списка сохранений</span>
-git<span class="w"> </span>stash<span class="w"> </span>list
-
-<span class="c1"># Применение последнего сохранения</span>
-git<span class="w"> </span>stash<span class="w"> </span>apply
-
-<span class="c1"># Применение конкретного сохранения</span>
-git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span>stash@<span class="o">{</span><span class="m">2</span><span class="o">}</span>
-
-<span class="c1"># Удаление последнего сохранения</span>
-git<span class="w"> </span>stash<span class="w"> </span>drop
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Сохранение текущих изменений</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>git<span class="w"> </span>stash
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Просмотр списка сохранений</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>git<span class="w"> </span>stash<span class="w"> </span>list
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Применение последнего сохранения</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>git<span class="w"> </span>stash<span class="w"> </span>apply
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># Применение конкретного сохранения</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span>stash@<span class="o">{</span><span class="m">2</span><span class="o">}</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1"># Удаление последнего сохранения</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>git<span class="w"> </span>stash<span class="w"> </span>drop
 </code></pre></div>
 <p>Команда <code>git stash</code> сохраняет текущие незафиксированные изменения во временное хранилище (stash). Это полезно, когда нужно переключиться на другую ветку, но при этом сохранить локальные изменения.</p>
 <p>Команда <code>git stash list</code> показывает список всех сохраненных изменений. Команда <code>git stash apply</code> применяет последнее сохранение, не удаляя его из stash. Ключ <code>stash@{2}</code> позволяет применить конкретное сохранение из списка.</p>
 <p>Команда <code>git stash drop</code> удаляет последнее сохранение из stash.</p>
 <h2 id="10-git">10. Настройка Git</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Установка имени пользователя</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
-
-<span class="c1"># Установка email</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your.email@example.com&quot;</span>
-
-<span class="c1"># Просмотр настроек</span>
-git<span class="w"> </span>config<span class="w"> </span>--list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Установка имени пользователя</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Установка email</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your.email@example.com&quot;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Просмотр настроек</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>git<span class="w"> </span>config<span class="w"> </span>--list
 </code></pre></div>
 <p>Команда <code>git config</code> позволяет настроить различные параметры Git, такие как имя пользователя и email. Ключ <code>--global</code> устанавливает настройки для всех репозиториев на вашем компьютере.</p>
 <p>Команда <code>git config --list</code> показывает все текущие настройки Git.</p>
@@ -1327,8 +1327,6 @@ git<span class="w"> </span>config<span class="w"> </span>--list
 </tr>
 </tbody>
 </table>
-<hr />
-<p>[[1.3 Руководство по использованию Git-платформы.md|Назад]] | [[2.2 Пример работы с локальным Git.md|Вперёд]]</p>
 
 
 

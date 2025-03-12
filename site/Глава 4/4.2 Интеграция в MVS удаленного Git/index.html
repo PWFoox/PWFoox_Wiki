@@ -1229,46 +1229,46 @@
 
 <h2 id="1">1. Подготовка локального проекта</h2>
 <p>Для начала нам понадобится проект с инициализированным локальным Git-репозиторием. Если у вас его еще нет, создайте простой консольный проект:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
 </code></pre></div>
-<p>![[Создание проекта и инициализация Git.png]]</p>
+<p><img alt="Создание проекта и инициализация Git.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20%D0%B8%20%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20Git.png" /></p>
 <h2 id="2">2. Создание локального репозитория</h2>
 <ol>
 <li>В нижней панели MVS нажимаем "Добавить в систему управления версиями"</li>
 </ol>
-<p>![[Контроль.png]]</p>
+<p><img alt="Контроль.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C.png" /></p>
 <ol>
 <li>В окне "Создание репозитория Git" выбираем "Только локальный"</li>
 </ol>
-<p>![[git_new_local.png]]</p>
+<p><img alt="git_new_local.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/git_new_local.png" /></p>
 <ol>
 <li>Нажимаем "Создать"</li>
 </ol>
-<p>![[кнопка создать.png]]</p>
+<p><img alt="кнопка создать.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B0%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C.png" /></p>
 <h2 id="3">3. Подготовка к интеграции с удалённым репозиторием</h2>
 <p>После создания локального репозитория в нижней панели MVS появятся индикаторы:</p>
 <ol>
 <li>
 <p>Текущий commit 
-![[Нижняя панель коминт.png]]</p>
+<img alt="Нижняя панель коминт.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F%D1%8F%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C%20%D0%BA%D0%BE%D0%BC%D0%B8%D0%BD%D1%82.png" /></p>
 </li>
 <li>
 <p>Количество изменений 
-![[Нижняя панель изменения.png]]</p>
+<img alt="Нижняя панель изменения.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F%D1%8F%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F.png" /></p>
 </li>
 <li>
 <p>Активная ветка
-![[Нижняя панель ветка.png]]</p>
+<img alt="Нижняя панель ветка.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F%D1%8F%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C%20%D0%B2%D0%B5%D1%82%D0%BA%D0%B0.png" /></p>
 </li>
 <li>
 <p>Выбранный репозиторий
-![[Нижняя панель репозиторий.png]]</p>
+<img alt="Нижняя панель репозиторий.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F%D1%8F%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C%20%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9.png" /></p>
 </li>
 </ol>
 <h2 id="4">4. Создание первого коммита</h2>
@@ -1276,15 +1276,15 @@
 <ol>
 <li>Откройте панель создания фиксаций, нажав на значок карандаша (индикатор изменений)</li>
 </ol>
-<p>![[menu_commit.png]]</p>
+<p><img alt="menu_commit.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/menu_commit.png" /></p>
 <ol>
 <li>Введите описание коммита и нажмите "Зафиксировать все"</li>
 </ol>
-<p>![[menu_commit_new.png]]</p>
+<p><img alt="menu_commit_new.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/menu_commit_new.png" /></p>
 <h2 id="5">5. Подключение удалённого репозитория</h2>
-<p>![[Верхняя панель кнопка git.png]]</p>
+<p><img alt="Верхняя панель кнопка git.png" src="../../src/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20IDE/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D1%8F%D1%8F%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C%20%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B0%20git.png" /></p>
 <ol>
-<li>В верхней панели  откройте вкладку "Git"</li>
+<li>В верхней панели откройте вкладку "Git"</li>
 <li>Выберите "Отправить в службу Git..."</li>
 <li>Введите:</li>
 <li>Имя (обычно "origin")</li>
@@ -1331,17 +1331,17 @@
 <ol>
 <li>
 <p>Перед началом работы:
-   <div class="highlight"><pre><span></span><code>Извлечь → Просмотреть изменения → Вытянуть
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Извлечь → Просмотреть изменения → Вытянуть
 </code></pre></div></p>
 </li>
 <li>
 <p>После завершения работы:
-   <div class="highlight"><pre><span></span><code>Зафиксировать изменения (Commit) → Вытянуть → Отправить
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Зафиксировать изменения (Commit) → Вытянуть → Отправить
 </code></pre></div></p>
 </li>
 <li>
 <p>При работе в команде:
-   <div class="highlight"><pre><span></span><code>Извлечь → Просмотреть изменения → Вытянуть → Внести свои изменения → Зафиксировать → Отправить
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Извлечь → Просмотреть изменения → Вытянуть → Внести свои изменения → Зафиксировать → Отправить
 </code></pre></div></p>
 </li>
 </ol>

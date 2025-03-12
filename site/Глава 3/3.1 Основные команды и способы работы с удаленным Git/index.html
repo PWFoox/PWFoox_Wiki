@@ -1042,36 +1042,36 @@
   <h1>3.1 Основные команды и способы работы с удаленным Git</h1>
 
 <h2 id="1">1. Клонирование удаленного репозитория</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Базовое клонирование репозитория - создает локальную копию удаленного репозитория</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repository.git
-
-<span class="c1"># Клонирование конкретной ветки - создает копию репозитория с определенной веткой</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repository.git
-git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branch-name<span class="w"> </span>origin/branch-name
-
-<span class="c1"># Клонирование с ограниченной историей - полезно для больших репозиториев</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repository.git
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>fetch.depth<span class="w"> </span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Базовое клонирование репозитория - создает локальную копию удаленного репозитория</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repository.git
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Клонирование конкретной ветки - создает копию репозитория с определенной веткой</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repository.git
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branch-name<span class="w"> </span>origin/branch-name
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Клонирование с ограниченной историей - полезно для больших репозиториев</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repository.git
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>fetch.depth<span class="w"> </span><span class="m">1</span>
 </code></pre></div>
 <p><strong>Клонирование удаленного репозитория</strong>:
    - <code>git clone https://github.com/username/repository.git</code> - базовое клонирование репозитория, создает локальную копию удаленного репозитория.
    - <code>git clone https://github.com/username/repository.git</code> и <code>git checkout -b branch-name origin/branch-name</code> - клонирование конкретной ветки, создает копию репозитория с указанной веткой.
    - <code>git clone https://github.com/username/repository.git</code> и <code>git config --global fetch.depth 1</code> - клонирование с ограниченной историей, полезно для больших репозиториев.</p>
 <h2 id="2">2. Работа с удаленными репозиториями</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Просмотр списка настроенных удаленных репозиториев с их URL</span>
-git<span class="w"> </span>remote<span class="w"> </span>-v
-
-<span class="c1"># Добавление нового удаленного репозитория с именем origin</span>
-git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/username/repository.git
-
-<span class="c1"># Удаление удаленного репозитория из списка удаленных репозиториев</span>
-git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
-
-<span class="c1"># Изменение имени удаленного репозитория</span>
-git<span class="w"> </span>remote<span class="w"> </span>rename<span class="w"> </span>old-name<span class="w"> </span>new-name
-
-<span class="c1"># Просмотр подробной информации об удаленном репозитории</span>
-git<span class="w"> </span>remote<span class="w"> </span>show<span class="w"> </span>origin
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Просмотр списка настроенных удаленных репозиториев с их URL</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>remote<span class="w"> </span>-v
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Добавление нового удаленного репозитория с именем origin</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/username/repository.git
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Удаление удаленного репозитория из списка удаленных репозиториев</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Изменение имени удаленного репозитория</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>git<span class="w"> </span>remote<span class="w"> </span>rename<span class="w"> </span>old-name<span class="w"> </span>new-name
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Просмотр подробной информации об удаленном репозитории</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>git<span class="w"> </span>remote<span class="w"> </span>show<span class="w"> </span>origin
 </code></pre></div>
 <p><strong>Работа с удаленными репозиториями</strong>:
    - <code>git remote -v</code> - просмотр списка настроенных удаленных репозиториев с их URL.
@@ -1080,18 +1080,18 @@ git<span class="w"> </span>remote<span class="w"> </span>show<span class="w"> </
    - <code>git remote rename old-name new-name</code> - изменение имени удаленного репозитория.
    - <code>git remote show origin</code> - просмотр подробной информации об удаленном репозитории.</p>
 <h2 id="3">3. Получение изменений с удаленного репозитория</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Получение всех изменений с удаленного репозитория без слияния</span>
-git<span class="w"> </span>fetch<span class="w"> </span>origin
-
-<span class="c1"># Получение изменений с определенной ветки удаленного репозитория</span>
-git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>branch-name
-
-<span class="c1"># Получение изменений и автоматическое слияние с текущей веткой</span>
-git<span class="w"> </span>pull<span class="w"> </span>origin
-
-<span class="c1"># Получение изменений с перебазированием текущей ветки</span>
-git<span class="w"> </span>fetch<span class="w"> </span>origin
-git<span class="w"> </span>rebase<span class="w"> </span>origin/branch-name
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Получение всех изменений с удаленного репозитория без слияния</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Получение изменений с определенной ветки удаленного репозитория</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>branch-name
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Получение изменений и автоматическое слияние с текущей веткой</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>git<span class="w"> </span>pull<span class="w"> </span>origin
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Получение изменений с перебазированием текущей ветки</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>git<span class="w"> </span>rebase<span class="w"> </span>origin/branch-name
 </code></pre></div>
 <p><strong>Получение изменений с удаленного репозитория</strong>:
    - <code>git fetch origin</code> - получение всех изменений с удаленного репозитория без слияния.
@@ -1099,17 +1099,17 @@ git<span class="w"> </span>rebase<span class="w"> </span>origin/branch-name
    - <code>git pull origin</code> - получение изменений и автоматическое слияние с текущей веткой.
    - <code>git fetch origin</code> и <code>git rebase origin/branch-name</code> - получение изменений с перебазированием текущей ветки.</p>
 <h2 id="4">4. Отправка изменений в удаленный репозиторий</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Отправка текущей ветки в удаленный репозиторий</span>
-git<span class="w"> </span>push<span class="w"> </span>origin
-
-<span class="c1"># Отправка определенной локальной ветки в удаленный репозиторий</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>local-branch-name
-
-<span class="c1"># Принудительная отправка изменений (использовать с осторожностью!)</span>
-git<span class="w"> </span>push<span class="w"> </span>--force<span class="w"> </span>origin<span class="w"> </span>branch-name
-
-<span class="c1"># Отправка всех веток в удаленный репозиторий</span>
-git<span class="w"> </span>push<span class="w"> </span>--all<span class="w"> </span>origin
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Отправка текущей ветки в удаленный репозиторий</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>push<span class="w"> </span>origin
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Отправка определенной локальной ветки в удаленный репозиторий</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>local-branch-name
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Принудительная отправка изменений (использовать с осторожностью!)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>git<span class="w"> </span>push<span class="w"> </span>--force<span class="w"> </span>origin<span class="w"> </span>branch-name
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># Отправка всех веток в удаленный репозиторий</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>git<span class="w"> </span>push<span class="w"> </span>--all<span class="w"> </span>origin
 </code></pre></div>
 <p><strong>Отправка изменений в удаленный репозиторий</strong>:
    - <code>git push origin</code> - отправка текущей ветки в удаленный репозиторий.
@@ -1117,20 +1117,20 @@ git<span class="w"> </span>push<span class="w"> </span>--all<span class="w"> </s
    - <code>git push --force origin branch-name</code> - принудительная отправка изменений (использовать с осторожностью!).
    - <code>git push --all origin</code> - отправка всех веток в удаленный репозиторий.</p>
 <h2 id="5">5. Работа с удаленными ветками</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Просмотр только удаленных веток</span>
-git<span class="w"> </span>branch<span class="w"> </span>--remotes
-
-<span class="c1"># Просмотр всех веток (локальных и удаленных)</span>
-git<span class="w"> </span>branch<span class="w"> </span>--all
-
-<span class="c1"># Создание новой локальной ветки на основе удаленной</span>
-git<span class="w"> </span>checkout<span class="w"> </span>--track<span class="w"> </span>origin/remote-branch
-
-<span class="c1"># Привязка локальной ветки к удаленной для отслеживания</span>
-git<span class="w"> </span>branch<span class="w"> </span>--set-upstream-to<span class="o">=</span>origin/remote-branch<span class="w"> </span>local-branch
-
-<span class="c1"># Удаление ветки в удаленном репозитории</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>remote-branch-name
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Просмотр только удаленных веток</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>branch<span class="w"> </span>--remotes
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Просмотр всех веток (локальных и удаленных)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>git<span class="w"> </span>branch<span class="w"> </span>--all
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Создание новой локальной ветки на основе удаленной</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>git<span class="w"> </span>checkout<span class="w"> </span>--track<span class="w"> </span>origin/remote-branch
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Привязка локальной ветки к удаленной для отслеживания</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>git<span class="w"> </span>branch<span class="w"> </span>--set-upstream-to<span class="o">=</span>origin/remote-branch<span class="w"> </span>local-branch
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Удаление ветки в удаленном репозитории</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>remote-branch-name
 </code></pre></div>
 <p><strong>Работа с удаленными ветками</strong>:
    - <code>git branch --remotes</code> - просмотр только удаленных веток.
@@ -1139,17 +1139,17 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
    - <code>git branch --set-upstream-to=origin/remote-branch local-branch</code> - привязка локальной ветки к удаленной для отслеживания.
    - <code>git push origin --delete remote-branch-name</code> - удаление ветки в удаленном репозитории.</p>
 <h2 id="6">6. Работа с тегами на сервере</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Создание аннотированного тега</span>
-git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Version 1.0&quot;</span>
-
-<span class="c1"># Отправка конкретного тега в удаленный репозиторий</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v1.0
-
-<span class="c1"># Отправка всех локальных тегов в удаленный репозиторий</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--tags
-
-<span class="c1"># Удаление тега в удаленном репозитории</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>refs/tags/tag-name
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Создание аннотированного тега</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Version 1.0&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Отправка конкретного тега в удаленный репозиторий</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v1.0
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Отправка всех локальных тегов в удаленный репозиторий</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--tags
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Удаление тега в удаленном репозитории</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>refs/tags/tag-name
 </code></pre></div>
 <p><strong>Работа с тегами на сервере</strong>:
    - <code>git tag -a v1.0 -m "Version 1.0"</code> - создание аннотированного тега.
@@ -1157,52 +1157,52 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
    - <code>git push origin --tags</code> - отправка всех локальных тегов в удаленный репозиторий.
    - <code>git push origin --delete refs/tags/tag-name</code> - удаление тега в удаленном репозитории.</p>
 <h2 id="7-pull-request">7. Работа с форками и Pull Request</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Создание форка происходит через веб-интерфейс GitHub/GitLab/Bitbucket</span>
-
-<span class="c1"># Клонирование своего форка</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/your-username/repository.git
-
-<span class="c1"># Переход в директорию проекта</span>
-<span class="nb">cd</span><span class="w"> </span>repository
-
-<span class="c1"># Добавление оригинального репозитория как удаленного</span>
-git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/original-owner/repository.git
-
-<span class="c1"># Проверка настроенных удаленных репозиториев</span>
-git<span class="w"> </span>remote<span class="w"> </span>-v
-
-<span class="c1"># Создание новой ветки для работы над функционалом</span>
-git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/new-feature
-
-<span class="c1"># Получение последних изменений из оригинального репозитория</span>
-git<span class="w"> </span>fetch<span class="w"> </span>upstream
-
-<span class="c1"># Обновление главной ветки локального репозитория</span>
-git<span class="w"> </span>checkout<span class="w"> </span>main
-git<span class="w"> </span>merge<span class="w"> </span>upstream/main
-
-<span class="c1"># Обновление ветки feature относительно обновленной main</span>
-git<span class="w"> </span>checkout<span class="w"> </span>feature/new-feature
-git<span class="w"> </span>merge<span class="w"> </span>main
-
-<span class="c1"># Внесение изменений и создание коммита</span>
-git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Подробное описание внесенных изменений&quot;</span>
-
-<span class="c1"># Отправка ветки в свой форк</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/new-feature
-
-<span class="c1"># Если нужно обновить существующий Pull Request</span>
-git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Дополнительные изменения после code review&quot;</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/new-feature
-
-<span class="c1"># После принятия Pull Request, удаление локальной ветки</span>
-git<span class="w"> </span>checkout<span class="w"> </span>main
-git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>feature/new-feature
-
-<span class="c1"># Удаление ветки в удаленном репозитории (вашем форке)</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>feature/new-feature
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Создание форка происходит через веб-интерфейс GitHub/GitLab/Bitbucket</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Клонирование своего форка</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/your-username/repository.git
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># Переход в директорию проекта</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">cd</span><span class="w"> </span>repository
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># Добавление оригинального репозитория как удаленного</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/original-owner/repository.git
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># Проверка настроенных удаленных репозиториев</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>git<span class="w"> </span>remote<span class="w"> </span>-v
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="c1"># Создание новой ветки для работы над функционалом</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/new-feature
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="c1"># Получение последних изменений из оригинального репозитория</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="c1"># Обновление главной ветки локального репозитория</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>git<span class="w"> </span>merge<span class="w"> </span>upstream/main
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="c1"># Обновление ветки feature относительно обновленной main</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>git<span class="w"> </span>checkout<span class="w"> </span>feature/new-feature
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>git<span class="w"> </span>merge<span class="w"> </span>main
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="c1"># Внесение изменений и создание коммита</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Подробное описание внесенных изменений&quot;</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="c1"># Отправка ветки в свой форк</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/new-feature
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="c1"># Если нужно обновить существующий Pull Request</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Дополнительные изменения после code review&quot;</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/new-feature
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="c1"># После принятия Pull Request, удаление локальной ветки</span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>feature/new-feature
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a><span class="c1"># Удаление ветки в удаленном репозитории (вашем форке)</span>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>feature/new-feature
 </code></pre></div>
 <p><strong>Работа с форками и Pull Request</strong>:
    - Создание форка происходит через веб-интерфейс GitHub/GitLab/Bitbucket.
@@ -1220,17 +1220,17 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <ol>
 <li>
 <p>Структура сообщений коммитов:
-<div class="highlight"><pre><span></span><code><span class="c1"># Формат</span>
-&lt;тип&gt;:<span class="w"> </span>&lt;описание&gt;
-
-Подробное<span class="w"> </span>описание<span class="w"> </span>при<span class="w"> </span>необходимости
-
-<span class="c1"># Пример</span>
-feat:<span class="w"> </span>добавлена<span class="w"> </span>функция<span class="w"> </span>автоматической<span class="w"> </span>валидации<span class="w"> </span>email
-
-Добавлена<span class="w"> </span>проверка<span class="w"> </span>формата<span class="w"> </span>email<span class="w"> </span>при<span class="w"> </span>регистрации
-Реализована<span class="w"> </span>проверка<span class="w"> </span>на<span class="w"> </span>существующие<span class="w"> </span>адреса
-Добавлены<span class="w"> </span>unit-тесты
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Формат</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&lt;тип&gt;:<span class="w"> </span>&lt;описание&gt;
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Подробное<span class="w"> </span>описание<span class="w"> </span>при<span class="w"> </span>необходимости
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># Пример</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>feat:<span class="w"> </span>добавлена<span class="w"> </span>функция<span class="w"> </span>автоматической<span class="w"> </span>валидации<span class="w"> </span>email
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>Добавлена<span class="w"> </span>проверка<span class="w"> </span>формата<span class="w"> </span>email<span class="w"> </span>при<span class="w"> </span>регистрации
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>Реализована<span class="w"> </span>проверка<span class="w"> </span>на<span class="w"> </span>существующие<span class="w"> </span>адреса
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Добавлены<span class="w"> </span>unit-тесты
 </code></pre></div></p>
 </li>
 <li>
@@ -1267,22 +1267,22 @@ feat:<span class="w"> </span>добавлена<span class="w"> </span>функ�
 </li>
 <li>
 <p>Синхронизация с основным репозиторием:
-<div class="highlight"><pre><span></span><code><span class="c1"># Регулярно выполняйте синхронизацию</span>
-git<span class="w"> </span>fetch<span class="w"> </span>upstream
-git<span class="w"> </span>checkout<span class="w"> </span>main
-git<span class="w"> </span>merge<span class="w"> </span>upstream/main
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Регулярно выполняйте синхронизацию</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>git<span class="w"> </span>merge<span class="w"> </span>upstream/main
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div></p>
 </li>
 <li>
 <p>Разрешение конфликтов: ^8e7f7b
-<div class="highlight"><pre><span></span><code><span class="c1"># При возникновении конфликтов</span>
-git<span class="w"> </span>fetch<span class="w"> </span>upstream
-git<span class="w"> </span>merge<span class="w"> </span>upstream/main
-<span class="c1"># Решите конфликты в редакторе</span>
-git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;resolve: разрешение конфликтов с основной веткой&quot;</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/new-feature
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># При возникновении конфликтов</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>git<span class="w"> </span>merge<span class="w"> </span>upstream/main
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Решите конфликты в редакторе</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;resolve: разрешение конфликтов с основной веткой&quot;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/new-feature
 </code></pre></div></p>
 </li>
 </ol>
@@ -1333,8 +1333,6 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 </tr>
 </tbody>
 </table>
-<hr />
-<p>[[2.2 Пример работы с локальным Git.md|Назад]] | [[3.2 Пример работы с удаленным Git.md|Вперёд]]</p>
 
 
 
