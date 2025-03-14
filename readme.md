@@ -2,6 +2,7 @@
     <img src="https://img.shields.io/badge/Version-v2.0.0-blue" alt="Версия">
     <img src="https://img.shields.io/badge/License-PWFL-success" alt="Лицензия">
     <img src="https://img.shields.io/badge/Platform-MkDocs-9cf" alt="Платформа">
+    <img src="https://api.netlify.com/api/v1/badges/f531e971-c877-4609-b446-ef199d65513d/deploy-status">
 </p>
 
 > [!NOTE]
