@@ -1,0 +1,116 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
+/* ======================== */
+/* Глобальные переменные */
+/* ======================== */
+:root {
+  --md-default-bg-color: #0d1117;    /* Основной фон */
+  --md-default-fg-color: #c9d1d9;    /* Цвет текста */
+  --md-primary-fg-color: #238636;    /* Основной акцент (зелёный) */
+  --md-accent-fg-color: #3fb950;     /* Вторичный акцент */
+  --md-code-bg-color: #161b22;       /* Фон блоков кода */
+}
+
+/* ======================== */
+/* Информационные блоки (Admonitions) */
+/* ======================== */
+.md-typeset .admonition {
+  border-left: 4px solid;
+  background: rgba(255, 255, 255, 0.03);
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem 1.2rem 4.5rem;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.md-typeset .admonition::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 1.8em;
+  position: absolute;
+  left: 1.5rem;
+  top: 1.2rem;
+}
+
+.md-typeset .admonition-title {
+  display: none !important;
+}
+
+/* Note (синий) */
+.md-typeset .admonition.note {
+  border-color: #2f81f7;
+  background: rgba(47, 129, 247, 0.08);
+}
+.md-typeset .admonition.note::before {
+  content: "\f05a"; /* info-circle */
+  color: #2f81f7;
+}
+
+/* Tip (зелёный) */
+.md-typeset .admonition.tip {
+  border-color: #3fb950;
+  background: rgba(63, 185, 80, 0.08);
+}
+.md-typeset .admonition.tip::before {
+  content: "\f0eb"; /* lightbulb */
+  color: #3fb950;
+}
+
+/* Warning (оранжевый) */
+.md-typeset .admonition.warning {
+  border-color: #ff9f1c;
+  background: rgba(255, 159, 28, 0.08);
+}
+.md-typeset .admonition.warning::before {
+  content: "\f071"; /* exclamation-triangle */
+  color: #ff9f1c;
+}
+
+
+/* Фон внутренней части (где текст) */
+.md-typeset pre code {
+  border-radius: 9px;
+  background: #211d1d !important;
+  color: #fff !important; /* Белый текст */
+}
+
+/* Номера строк */
+.linenos {
+  color: #666 !important;
+  border-right: 1px solid #333 !important;
+}
+
+/* Подсветка строк */
+.hll {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-left: 3px solid #fff !important;
+}
+
+/* Плавная анимация подсветки */
+.highlight .linenums li {
+  transition: background 0.3s ease;
+}
+
+/* ======================== */
+/* Навигация */
+/* ======================== */
+.md-nav__link--active {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 600;
+}
+
+.md-tabs {
+  border-bottom: 1px solid #30363d;
+  background: linear-gradient(90deg, #0d1117 0%, #161b22 100%);
+}
+
+/* ======================== */
+/* Изображения */
+/* ======================== */
+.md-typeset img {
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem 0;
+}

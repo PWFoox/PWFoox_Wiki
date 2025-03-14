@@ -1,0 +1,1164 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../2.1%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%20%D0%B8%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D1%81%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20Git/" rel="prev"/>
+<link href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203/3.1%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%20%D0%B8%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D1%81%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%20Git/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.8" name="generator"/>
+<title>2.2 Пример работы с локальным Git - Хаб-знаний</title>
+<link href="../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="#0053A0" data-md-color-primary="#002B5C" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#git">
+          Перейти к содержанию
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Верхний колонтитул" class="md-header__inner md-grid">
+<a aria-label="Хаб-знаний" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Хаб-знаний">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Хаб-знаний
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              2.2 Пример работы с локальным Git
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Поиск" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Поиск" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Поиск" class="md-search__options">
+<button aria-label="Очистить" class="md-search__icon md-icon" tabindex="-1" title="Очистить" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Вкладки" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+        
+  
+    
+  
+  Главная
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201/1.1%20%D0%A1%D0%BA%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20Git/">
+          
+  
+  Git Система
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../DevOps/VS%20Code/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20VS%20Code/">
+          
+  
+  Инструменты разработки
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Навигация" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Хаб-знаний" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Хаб-знаний">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Хаб-знаний
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Главная
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    Git Система
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Git Система
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Глава 1
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Глава 1
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201/1.1%20%D0%A1%D0%BA%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20Git/">
+<span class="md-ellipsis">
+    1.1 Скачивание и установка Git
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201/1.2%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D0%B8%20Git/">
+<span class="md-ellipsis">
+    1.2 Основные концепции Git
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201/1.3%20%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%20%D0%BF%D0%BE%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8E%20Git-%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B/">
+<span class="md-ellipsis">
+    1.3 Руководство по использованию Git-платформы
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Глава 2
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Глава 2
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2.1%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%20%D0%B8%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D1%81%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20Git/">
+<span class="md-ellipsis">
+    2.1 Основные команды и способы работы с локальным Git
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    2.2 Пример работы с локальным Git
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    2.2 Пример работы с локальным Git
+    
+  </span>
+</a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#git">
+<span class="md-ellipsis">
+      Предварительная настройка Git
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      Полезные советы по использованию командной строки
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      1. Создание проекта и первый коммит
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      2. Добавление кода и второй коммит
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      3. Внесение изменений в существующий файл
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+<span class="md-ellipsis">
+      4. Работа с ветками
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+<span class="md-ellipsis">
+      5. Слияние веток
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+<span class="md-ellipsis">
+      6. Работа с конфликтами
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+<span class="md-ellipsis">
+      7. Просмотр истории
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-tags">
+<span class="md-ellipsis">
+      8. Работа с метками (tags)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+<span class="md-ellipsis">
+      9. Итоговая структура проекта
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+<span class="md-ellipsis">
+      10. Проверка статуса в конце
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      Дополнительные советы:
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Глава 3
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            Глава 3
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203/3.1%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%20%D0%B8%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D1%81%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%20Git/">
+<span class="md-ellipsis">
+    3.1 Основные команды и способы работы с удаленным Git
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203/3.2%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D1%81%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%20Git/">
+<span class="md-ellipsis">
+    3.2 Пример работы с удаленным Git
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Глава 4
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            Глава 4
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204/4.1%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20MVS%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20Git/">
+<span class="md-ellipsis">
+    4.1 Интеграция в MVS локального Git
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204/4.2%20%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20MVS%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20Git/">
+<span class="md-ellipsis">
+    4.2 Интеграция в MVS удаленного Git
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Дополнительно
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            Дополнительно
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE/%D0%A0%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BF%D0%BE%20%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8E%20%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F/">
+<span class="md-ellipsis">
+    Рекомендации по ведению репозитория
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Инструменты разработки
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Инструменты разработки
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+<span class="md-ellipsis">
+    VS Code
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+            VS Code
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Введение в VS Code
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_1_1">
+<span class="md-nav__icon md-icon"></span>
+            Введение в VS Code
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../DevOps/VS%20Code/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20VS%20Code/">
+<span class="md-ellipsis">
+    Что такое VS Code?
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Установка и настройка VS Code
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_1_2">
+<span class="md-nav__icon md-icon"></span>
+            Установка и настройка VS Code
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../DevOps/VS%20Code/%D0%A1%D0%BA%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20VS%20Code/">
+<span class="md-ellipsis">
+    Скачивание и установка VS Code
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#git">
+<span class="md-ellipsis">
+      Предварительная настройка Git
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      Полезные советы по использованию командной строки
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      1. Создание проекта и первый коммит
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      2. Добавление кода и второй коммит
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      3. Внесение изменений в существующий файл
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+<span class="md-ellipsis">
+      4. Работа с ветками
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+<span class="md-ellipsis">
+      5. Слияние веток
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+<span class="md-ellipsis">
+      6. Работа с конфликтами
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+<span class="md-ellipsis">
+      7. Просмотр истории
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-tags">
+<span class="md-ellipsis">
+      8. Работа с метками (tags)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+<span class="md-ellipsis">
+      9. Итоговая структура проекта
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+<span class="md-ellipsis">
+      10. Проверка статуса в конце
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      Дополнительные советы:
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>2.2 Пример работы с локальным Git</h1>
+<h2 id="git">Предварительная настройка Git</h2>
+<p>Перед началом работы важно правильно настроить Git. Это делается один раз после установки:</p>
+<div class="highlight"><pre><span></span><code><span id="__line__-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Установка имени пользователя для всех репозиториев</span>
+</span><span id="__line__-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Ваше Имя"</span>
+</span><span id="__line__-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__line__-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Установка email для всех репозиториев</span>
+</span><span id="__line__-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"your.email@example.com"</span>
+</span><span id="__line__-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__line__-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1"># Просмотр всех настроек</span>
+</span><span id="__line__-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>git<span class="w"> </span>config<span class="w"> </span>--list
+</span></code></pre></div>
+<h2 id="_1">Полезные советы по использованию командной строки</h2>
+<ol>
+<li>Автодополнение команд:</li>
+<li>Нажатие клавиши Tab автоматически дополняет команду Git</li>
+<li>Двойное нажатие Tab показывает все возможные варианты дополнения</li>
+<li>
+<p>Работает для команд, веток, файлов и других параметров</p>
+</li>
+<li>
+<p>История команд:</p>
+</li>
+<li>Клавиши ↑↓ позволяют перемещаться по истории выполненных команд</li>
+<li>Ctrl+R позволяет искать по истории команд</li>
+</ol>
+<h2 id="1">1. Создание проекта и первый коммит</h2>
+<div class="highlight"><pre><span></span><code><span id="__line__-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Инициализируем Git репозиторий</span>
+</span><span id="__line__-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>init
+</span></code></pre></div>
+<blockquote>
+<p>Термин: Репозиторий (repository) - это директория проекта, в которой Git отслеживает изменения файлов. Содержит все версии файлов и историю изменений.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span id="__line__-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Проверяем статус репозитория</span>
+</span><span id="__line__-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<blockquote>
+<p>Термин: Статус - показывает текущее состояние файлов в репозитории: отслеживаемые/неотслеживаемые, измененные, добавленные в индекс.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span id="__line__-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Добавляем файл в индекс</span>
+</span><span id="__line__-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>git<span class="w"> </span>add<span class="w"> </span>README.md
+</span><span id="__line__-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
+</span><span id="__line__-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># Создаём первый коммит</span>
+</span><span id="__line__-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Первый commint: add README.md"</span>
+</span></code></pre></div>
+<p><img alt="Инициализация git.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%98%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20git.png"/></p>
+<p><img alt="git commit m Первый commint addREADME.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/git%20commit%20m%20%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D0%B9%20commint%20addREADME.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+</div>
+<h2 id="2">2. Добавление кода и второй коммит</h2>
+<div class="highlight"><pre><span></span><code><span id="__line__-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Создаём файл с кодом</span>
+</span><span id="__line__-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>index.py
+</span><span id="__line__-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
+</span><span id="__line__-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># Проверяем статус</span>
+</span><span id="__line__-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<blockquote>
+<p>Термин: Рабочая директория (working directory) - это каталог с файлами проекта, где вы непосредственно работаете с файлами.</p>
+</blockquote>
+<p><img alt="git status.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/git%20status.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+</div>
+<h2 id="3">3. Внесение изменений в существующий файл</h2>
+<div class="highlight"><pre><span></span><code><span id="__line__-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Изменяем код в index.py</span>
+</span><span id="__line__-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>index.py
+</span><span id="__line__-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__line__-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># Смотрим изменения</span>
+</span><span id="__line__-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>git<span class="w"> </span>diff
+</span></code></pre></div>
+<blockquote>
+<p>Термин: diff - показывает различия между текущим состоянием файлов и последним коммитом или индексом.</p>
+</blockquote>
+<p><img alt="Внесение изменений в существующий файл.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D1%84%D0%B0%D0%B9%D0%BB.png"/></p>
+<h2 id="4">4. Работа с ветками</h2>
+<blockquote>
+<p>Термин: Ветка (branch) - это независимая линия разработки, позволяющая работать над разными функциями параллельно, не затрагивая основной код.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span id="__line__-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># Смотрим текущие ветки</span>
+</span><span id="__line__-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>git<span class="w"> </span>branch
+</span></code></pre></div>
+<p><img alt="Работа с ветками.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D0%B2%D0%B5%D1%82%D0%BA%D0%B0%D0%BC%D0%B8.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Создаём новую ветку для новой функции</span>
+</span><span id="__line__-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>git<span class="w"> </span>branch<span class="w"> </span>feature/goodbye
+</span></code></pre></div>
+<blockquote>
+<p>Совет: Используйте осмысленные названия веток, например:
+- feature/<em> - для новых функций
+- bugfix/</em> - для исправления ошибок
+- hotfix/<em> - для срочных исправлений
+- release/</em> - для подготовки релизов</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span id="__line__-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># Проверяем список веток</span>
+</span><span id="__line__-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>git<span class="w"> </span>branch
+</span></code></pre></div>
+<p><img alt="Проверяем список веток.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%B5%D0%BC%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%B2%D0%B5%D1%82%D0%BE%D0%BA.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Переключаемся на новую ветку</span>
+</span><span id="__line__-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>feature/goodbye
+</span></code></pre></div>
+<p><img alt="Переключаемся на новую ветку.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D0%B5%D0%BC%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BD%D0%BE%D0%B2%D1%83%D1%8E%20%D0%B2%D0%B5%D1%82%D0%BA%D1%83.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># изменяем файл в этой ветке</span>
+</span><span id="__line__-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>index.py
+</span><span id="__line__-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>
+</span><span id="__line__-10-4"><a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1"># Смотрим изменения</span>
+</span><span id="__line__-10-5"><a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<p><img alt="Проверка изменений в новой ветке.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B2%D0%B5%D1%82%D0%BA%D0%B5.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Коммитим изменения в новой ветке</span>
+</span><span id="__line__-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>git<span class="w"> </span>add<span class="w"> </span>index.py
+</span><span id="__line__-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add goodbye function"</span>
+</span></code></pre></div>
+<p><img alt="Коммитим изменения в новой ветке.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9A%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%D0%B8%D0%BC%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B2%D0%B5%D1%82%D0%BA%D0%B5.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># Проверяем лог</span>
+</span><span id="__line__-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</span></code></pre></div>
+<p><img alt="Проверяем лог.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%B5%D0%BC%20%D0%BB%D0%BE%D0%B3.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+</div>
+<h2 id="5">5. Слияние веток</h2>
+<blockquote>
+<p>Термин: Слияние (merge) - процесс объединения изменений из разных веток в одну.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span id="__line__-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># Возвращаемся в основную ветку</span>
+</span><span id="__line__-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>master
+</span><span id="__line__-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>
+</span><span id="__line__-13-4"><a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="c1"># Сливаем изменения из feature-ветки</span>
+</span><span id="__line__-13-5"><a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>git<span class="w"> </span>merge<span class="w"> </span>feature/goodbye-function
+</span></code></pre></div>
+<p><img alt="Слияние веток.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A1%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B5%D1%82%D0%BE%D0%BA.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+   commit id: "Комминт 4"
+   checkout master
+   merge feature/goodbye
+</div>
+<h2 id="6">6. Работа с конфликтами</h2>
+<div class="highlight"><pre><span></span><code><span id="__line__-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1"># Смотрим на какой мы ветке</span>
+</span><span id="__line__-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>git<span class="w"> </span>branch
+</span></code></pre></div>
+<p><img alt="Работа с конфликтами.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D0%BA%D0%BE%D0%BD%D1%84%D0%BB%D0%B8%D0%BA%D1%82%D0%B0%D0%BC%D0%B8.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># Создаём новую ветку</span>
+</span><span id="__line__-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>git<span class="w"> </span>branch<span class="w"> </span>new
+</span></code></pre></div>
+<p><img alt="Создаём новую ветку git branch new.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%91%D0%BC%20%D0%BD%D0%BE%D0%B2%D1%83%D1%8E%20%D0%B2%D0%B5%D1%82%D0%BA%D1%83%20git%20branch%20new.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># Переключаемся на новую ветку</span>
+</span><span id="__line__-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>new
+</span></code></pre></div>
+<p><img alt="Переключаемся на новую ветку git checkout new.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D0%B5%D0%BC%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BD%D0%BE%D0%B2%D1%83%D1%8E%20%D0%B2%D0%B5%D1%82%D0%BA%D1%83%20git%20checkout%20new.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1"># Изменяем файл функцию в первой ветке</span>
+</span><span id="__line__-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>index.py
+</span><span id="__line__-17-3"><a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>
+</span><span id="__line__-17-4"><a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="c1"># Смотрим статус изменений</span>
+</span><span id="__line__-17-5"><a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<p><img alt="Изменяем файл функцию в первой ветке index.py.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D1%8F%D0%B5%D0%BC%20%D1%84%D0%B0%D0%B9%D0%BB%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8E%20%D0%B2%20%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%B9%20%D0%B2%D0%B5%D1%82%D0%BA%D0%B5%20index.py.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># Добавляем изменения в индекс</span>
+</span><span id="__line__-18-2"><a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>git<span class="w"> </span>add<span class="w"> </span>index.py
+</span></code></pre></div>
+<p><img alt="Добавляем изменения в индекс git add index.py.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5%D0%BC%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20git%20add%20index.py.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Создаём коммит в первой ветке</span>
+</span><span id="__line__-19-2"><a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Change"</span>
+</span></code></pre></div>
+<p><img alt="Создаём коммит в первой ветке git commit -m Change.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%91%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%20%D0%B2%20%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%B9%20%D0%B2%D0%B5%D1%82%D0%BA%D0%B5%20git%20commit%20-m%20Change.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+   commit id: "Комминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+</div>
+<div class="highlight"><pre><span></span><code><span id="__line__-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="c1"># Переключаемся обратно в main</span>
+</span><span id="__line__-20-2"><a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>master
+</span></code></pre></div>
+<p><img alt="Переключаемся обратно в main git checkout master.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D0%B5%D0%BC%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BD%D0%BE%D0%B2%D1%83%D1%8E%20%D0%B2%D0%B5%D1%82%D0%BA%D1%83%20git%20checkout%20new.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="c1"># Создаём конфликтующие изменения в master</span>
+</span><span id="__line__-21-2"><a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>index.py
+</span><span id="__line__-21-3"><a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>
+</span><span id="__line__-21-4"><a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="c1"># Проверяем статус</span>
+</span><span id="__line__-21-5"><a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<p><img alt="Создаём конфликтующие изменения в master index.py.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%91%D0%BC%20%D0%BA%D0%BE%D0%BD%D1%84%D0%BB%D0%B8%D0%BA%D1%82%D1%83%D1%8E%D1%89%D0%B8%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20master%20index.py.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-22-1"><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="c1"># Добавляем изменения в индекс</span>
+</span><span id="__line__-22-2"><a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>git<span class="w"> </span>add<span class="w"> </span>index.py
+</span><span id="__line__-22-3"><a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a>
+</span><span id="__line__-22-4"><a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="c1"># Создаём коммит в main</span>
+</span><span id="__line__-22-5"><a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Change 2"</span>
+</span></code></pre></div>
+<p><img alt="Создаём коммит в main git commit -m Change 2.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%91%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%20%D0%B2%20main%20git%20commit%20-m%20Change%202.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+   commit id: "Комминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+</div>
+<div class="highlight"><pre><span></span><code><span id="__line__-23-1"><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="c1"># Пытаемся слить ветку new в main</span>
+</span><span id="__line__-23-2"><a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a>git<span class="w"> </span>merge<span class="w"> </span>new
+</span></code></pre></div>
+<p><img alt="Пытаемся слить ветку new в main git merge new.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%8B%D1%82%D0%B0%D0%B5%D0%BC%D1%81%D1%8F%20%D1%81%D0%BB%D0%B8%D1%82%D1%8C%20%D0%B2%D0%B5%D1%82%D0%BA%D1%83%20new%20%D0%B2%20main%20git%20merge%20new.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-24-1"><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="c1"># Проверяем статус после конфликта</span>
+</span><span id="__line__-24-2"><a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<p><img alt="Проверяем статус после конфликта git status.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%B5%D0%BC%20%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%84%D0%BB%D0%B8%D0%BA%D1%82%D0%B0%20git%20status.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-25-1"><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="c1"># Открываем файл и видим конфликт</span>
+</span><span id="__line__-25-2"><a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a>cat<span class="w"> </span>index.py
+</span></code></pre></div>
+<p><img alt="Открываем файл и видим конфликт cat index.py.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D0%B2%D0%B0%D0%B5%D0%BC%20%D1%84%D0%B0%D0%B9%D0%BB%20%D0%B8%20%D0%B2%D0%B8%D0%B4%D0%B8%D0%BC%20%D0%BA%D0%BE%D0%BD%D1%84%D0%BB%D0%B8%D0%BA%D1%82%20cat%20index.py.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-26-1"><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt;<span class="w"> </span>HEAD
+</span><span id="__line__-26-2"><a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>print<span class="o">(</span><span class="s2">"hello world"</span><span class="o">)</span>
+</span><span id="__line__-26-3"><a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="o">=======</span>
+</span><span id="__line__-26-4"><a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a>print<span class="o">(</span><span class="s2">"sdsd"</span><span class="o">)</span>
+</span><span id="__line__-26-5"><a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a>printe<span class="o">(</span><span class="s2">"hi worled and hello world"</span><span class="o">)</span>
+</span><span id="__line__-26-6"><a href="#__codelineno-26-6" id="__codelineno-26-6" name="__codelineno-26-6"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<span class="w"> </span>new
+</span></code></pre></div>
+<blockquote>
+<p>Термин: Конфликт - ситуация, когда Git не может автоматически объединить изменения из разных веток, требуется ручное разрешение.</p>
+</blockquote>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+   commit id: "Комминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Конфлик" type: REVERSE
+</div>
+<p>Признаки конфликта в файле:
+<div class="highlight"><pre><span></span><code><span id="__line__-27-1"><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt;<span class="w"> </span>HEAD
+</span><span id="__line__-27-2"><a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="o">[</span>текущие<span class="w"> </span>изменения<span class="o">]</span>
+</span><span id="__line__-27-3"><a href="#__codelineno-27-3" id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="o">=======</span>
+</span><span id="__line__-27-4"><a href="#__codelineno-27-4" id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="o">[</span>входящие<span class="w"> </span>изменения<span class="o">]</span>
+</span><span id="__line__-27-5"><a href="#__codelineno-27-5" id="__codelineno-27-5" name="__codelineno-27-5"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<span class="w"> </span><span class="o">[</span>имя<span class="w"> </span>ветки<span class="o">]</span>
+</span></code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-28-1"><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="c1"># Решаем конфликт, выбирая нужную версию или объединяя их</span>
+</span><span id="__line__-28-2"><a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="c1"># Например, делаем такую версию:</span>
+</span><span id="__line__-28-3"><a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a>print<span class="o">(</span><span class="s2">"sdsd"</span><span class="o">)</span>
+</span><span id="__line__-28-4"><a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a>print<span class="o">(</span><span class="s2">"hello world"</span><span class="o">)</span>
+</span><span id="__line__-28-5"><a href="#__codelineno-28-5" id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w"> </span>&gt;<span class="w"> </span>index.py
+</span><span id="__line__-28-6"><a href="#__codelineno-28-6" id="__codelineno-28-6" name="__codelineno-28-6"></a>
+</span><span id="__line__-28-7"><a href="#__codelineno-28-7" id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="c1"># Проверяем изменения</span>
+</span><span id="__line__-28-8"><a href="#__codelineno-28-8" id="__codelineno-28-8" name="__codelineno-28-8"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<p><img alt="Решаем конфликт, выбирая нужную версию или объединяя их.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A0%D0%B5%D1%88%D0%B0%D0%B5%D0%BC%20%D0%BA%D0%BE%D0%BD%D1%84%D0%BB%D0%B8%D0%BA%D1%82%2C%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8F%20%D0%BD%D1%83%D0%B6%D0%BD%D1%83%D1%8E%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8E%20%D0%B8%D0%BB%D0%B8%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D1%8F%D1%8F%20%D0%B8%D1%85.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-29-1"><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="c1"># Добавляем решенный файл в индекс</span>
+</span><span id="__line__-29-2"><a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a>git<span class="w"> </span>add<span class="w"> </span>index.py
+</span></code></pre></div>
+<p><img alt="Добавляем решенный файл в индекс git add index.py.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5%D0%BC%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%84%D0%B0%D0%B9%D0%BB%20%D0%B2%20%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20git%20add%20index.py.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-30-1"><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="c1"># Завершаем слияние создавая коммит</span>
+</span><span id="__line__-30-2"><a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Решение слияния"</span>
+</span></code></pre></div>
+<p><img alt="Завершаем слияние создавая коммит git commit -m Решение слияния.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%97%D0%B0%D0%B2%D0%B5%D1%80%D1%88%D0%B0%D0%B5%D0%BC%20%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%20git%20commit%20-m%20%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D1%8F.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-31-1"><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="c1"># Проверяем историю</span>
+</span><span id="__line__-31-2"><a href="#__codelineno-31-2" id="__codelineno-31-2" name="__codelineno-31-2"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</span></code></pre></div>
+<p><img alt="Проверяем историю git log --oneline.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%B5%D0%BC%20%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8E%20git%20log%20--oneline.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-32-1"><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="c1"># Проверяем финальное содержимое файла</span>
+</span><span id="__line__-32-2"><a href="#__codelineno-32-2" id="__codelineno-32-2" name="__codelineno-32-2"></a>cat<span class="w"> </span>index.py
+</span></code></pre></div>
+<p><img alt="Проверяем финальное содержимое файла cat index.py.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%B5%D0%BC%20%D1%84%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D0%BE%D0%B5%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B0%20cat%20index.py.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-33-1"><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="c1"># Проверяем, что все чисто</span>
+</span><span id="__line__-33-2"><a href="#__codelineno-33-2" id="__codelineno-33-2" name="__codelineno-33-2"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<p><img alt="Проверяем, что все чисто git status.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%B5%D0%BC%2C%20%D1%87%D1%82%D0%BE%20%D0%B2%D1%81%D0%B5%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%20git%20status.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+   commit id: "Комминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Решение-слияния"
+</div>
+<h2 id="7">7. Просмотр истории</h2>
+<div class="highlight"><pre><span></span><code><span id="__line__-34-1"><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--oneline<span class="w"> </span>--all
+</span></code></pre></div>
+<p><img alt="Просмотр истории коммитов с графом git log --graph --oneline --all.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%20%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%D0%BE%D0%B2%20%D1%81%20%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%20git%20log%20--graph%20--oneline%20--all.png"/></p>
+<blockquote>
+<p>Термин: Лог (log) - история коммитов с информацией об авторе, дате и сообщении коммита.</p>
+</blockquote>
+<h2 id="8-tags">8. Работа с метками (tags)</h2>
+<blockquote>
+<p>Термин: Тег (tag) - именованная метка на определённом коммите, обычно используется для маркировки версий релиза.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span id="__line__-35-1"><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="c1"># Просмотр существующих тегов</span>
+</span><span id="__line__-35-2"><a href="#__codelineno-35-2" id="__codelineno-35-2" name="__codelineno-35-2"></a>git<span class="w"> </span>tag
+</span></code></pre></div>
+<p><img alt="Просмотр существующих тегов git tag.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D1%85%20%D1%82%D0%B5%D0%B3%D0%BE%D0%B2%20git%20tag.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-36-1"><a href="#__codelineno-36-1" id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="c1"># Создание аннотированного тега</span>
+</span><span id="__line__-36-2"><a href="#__codelineno-36-2" id="__codelineno-36-2" name="__codelineno-36-2"></a>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Version 1.0 release"</span>
+</span></code></pre></div>
+<p><img alt="Создание аннотированного тега git tag -a v1.0 -m Version 1.0 release.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B0%D0%BD%D0%BD%D0%BE%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%82%D0%B5%D0%B3%D0%B0%20git%20tag%20-a%20v1.0%20-m%20Version%201.0%20release.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-37-1"><a href="#__codelineno-37-1" id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="c1"># Просмотр информации о конкретном теге</span>
+</span><span id="__line__-37-2"><a href="#__codelineno-37-2" id="__codelineno-37-2" name="__codelineno-37-2"></a>git<span class="w"> </span>show<span class="w"> </span>v1.0
+</span></code></pre></div>
+<p><img alt="Просмотр информации о конкретном теге git show v1.0.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BE%20%D0%BA%D0%BE%D0%BD%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%BC%20%D1%82%D0%B5%D0%B3%D0%B5%20git%20show%20v1.0.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+   commit id: "Комминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Решение-слияния" tag: "v1.0"
+</div>
+<div class="highlight"><pre><span></span><code><span id="__line__-38-1"><a href="#__codelineno-38-1" id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="c1"># Создание легковесного тега</span>
+</span><span id="__line__-38-2"><a href="#__codelineno-38-2" id="__codelineno-38-2" name="__codelineno-38-2"></a>git<span class="w"> </span>tag<span class="w"> </span>v1.0-beta
+</span></code></pre></div>
+<p><img alt="Создание легковесного тега git tag v1.0-beta.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BB%D0%B5%D0%B3%D0%BA%D0%BE%D0%B2%D0%B5%D1%81%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%82%D0%B5%D0%B3%D0%B0%20git%20tag%20v1.0-beta.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+   commit id: "Комминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Решение-слияния" tag: "v1.0 v1.0-beta"
+</div>
+<div class="highlight"><pre><span></span><code><span id="__line__-39-1"><a href="#__codelineno-39-1" id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="c1"># Просмотр тегов с шаблоном</span>
+</span><span id="__line__-39-2"><a href="#__codelineno-39-2" id="__codelineno-39-2" name="__codelineno-39-2"></a>git<span class="w"> </span>tag<span class="w"> </span>--list<span class="w"> </span><span class="s2">"v1.*"</span>
+</span></code></pre></div>
+<p><img alt="Просмотр тегов с шаблоном git tag --list v1..png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%20%D1%82%D0%B5%D0%B3%D0%BE%D0%B2%20%D1%81%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%BC%20git%20tag%20--list%20v1..png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-40-1"><a href="#__codelineno-40-1" id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="c1"># Создание тега для определённого коммита</span>
+</span><span id="__line__-40-2"><a href="#__codelineno-40-2" id="__codelineno-40-2" name="__codelineno-40-2"></a>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v0.9<span class="w"> </span>5e0eeba<span class="w"> </span>-m<span class="w"> </span><span class="s2">"начало"</span>
+</span></code></pre></div>
+<p><img alt="Создание тега для определённого коммита git tag -a v0.9 5e0eeba -m начало.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%B3%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%D0%B0%20git%20tag%20-a%20v0.9%205e0eeba%20-m%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BE.png"/></p>
+<div class="mermaid">---
+title: Визуализация
+---
+%%{init: {'gitGraph':{'mainBranchName': 'master'}, 'theme': 'dark'}}%%
+gitGraph
+   commit id: "Комминт 1"
+   commit id: "Комминт 2" tag: "v0.9"
+   branch feature/goodbye
+   checkout feature/goodbye
+   commit id: "Комминт 3"
+   commit id: "Комминт 4"
+   checkout master
+   merge feature/goodbye
+   branch new
+   checkout new
+   commit id: "Коммит 5"
+   commit id: "Коммит 6"
+   checkout master
+   merge new id: "Решение-слияния" tag: "v1.0"
+</div>
+<div class="highlight"><pre><span></span><code><span id="__line__-41-1"><a href="#__codelineno-41-1" id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="c1"># Удаление тега</span>
+</span><span id="__line__-41-2"><a href="#__codelineno-41-2" id="__codelineno-41-2" name="__codelineno-41-2"></a>git<span class="w"> </span>tag<span class="w"> </span>--delete<span class="w"> </span>v1.0-beta
+</span></code></pre></div>
+<p><img alt="Удаление тега git tag --delete v1.0-beta.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%B3%D0%B0%20git%20tag%20--delete%20v1.0-beta.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-42-1"><a href="#__codelineno-42-1" id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="c1"># Проверка тегов после удаления</span>
+</span><span id="__line__-42-2"><a href="#__codelineno-42-2" id="__codelineno-42-2" name="__codelineno-42-2"></a>git<span class="w"> </span>tag
+</span></code></pre></div>
+<p><img alt="Проверка тегов после удаления git tag.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D1%82%D0%B5%D0%B3%D0%BE%D0%B2%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20git%20tag.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-43-1"><a href="#__codelineno-43-1" id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="c1"># Поиск коммита по тегу</span>
+</span><span id="__line__-43-2"><a href="#__codelineno-43-2" id="__codelineno-43-2" name="__codelineno-43-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>v1.0
+</span></code></pre></div>
+<p><img alt="Поиск коммита по тегу git checkout v1.0.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%D0%B0%20%D0%BF%D0%BE%20%D1%82%D0%B5%D0%B3%D1%83%20git%20checkout%20v1.0.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-44-1"><a href="#__codelineno-44-1" id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="c1"># Возврат к последнему состоянию master</span>
+</span><span id="__line__-44-2"><a href="#__codelineno-44-2" id="__codelineno-44-2" name="__codelineno-44-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>master
+</span></code></pre></div>
+<p><img alt="Возврат к последнему состоянию main git checkout main.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%20%D0%BA%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%BC%D1%83%20%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8E%20main%20git%20checkout%20main.png"/></p>
+<div class="highlight"><pre><span></span><code><span id="__line__-45-1"><a href="#__codelineno-45-1" id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="c1"># Просмотр истории с тегами</span>
+</span><span id="__line__-45-2"><a href="#__codelineno-45-2" id="__codelineno-45-2" name="__codelineno-45-2"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--decorate
+</span></code></pre></div>
+<p><img alt="Просмотр истории с тегами git log --oneline --decorate.png" src="../image_git/Исходники%20Пример%20работы/Просмотр%20истории%20с%20тегами%20git%20log%20--oneline%20--decorate.pngс"/></p>
+<h2 id="9">9. Итоговая структура проекта</h2>
+<p>Пояснение структуры:
+- README.md - файл с описанием проекта
+- index.py - основной файл с кодом
+- .git/ - служебная директория Git (скрытая)</p>
+<h2 id="10">10. Проверка статуса в конце</h2>
+<div class="highlight"><pre><span></span><code><span id="__line__-46-1"><a href="#__codelineno-46-1" id="__codelineno-46-1" name="__codelineno-46-1"></a>git<span class="w"> </span>status
+</span><span id="__line__-46-2"><a href="#__codelineno-46-2" id="__codelineno-46-2" name="__codelineno-46-2"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</span></code></pre></div>
+<p><img alt="Проверка статуса в конце.png" src="../../image_git/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%86%D0%B5.png"/></p>
+<h2 id="_2">Дополнительные советы:</h2>
+<ol>
+<li>
+<p>Используйте .gitignore для исключения файлов:
+<div class="highlight"><pre><span></span><code><span id="__line__-47-1"><a href="#__codelineno-47-1" id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="c1"># Создание .gitignore</span>
+</span><span id="__line__-47-2"><a href="#__codelineno-47-2" id="__codelineno-47-2" name="__codelineno-47-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"*.log\nnode_modules/\n.env"</span><span class="w"> </span>&gt;<span class="w"> </span>.gitignore
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Отмена последних действий:
+<div class="highlight"><pre><span></span><code><span id="__line__-48-1"><a href="#__codelineno-48-1" id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="c1"># Отмена изменений в файле</span>
+</span><span id="__line__-48-2"><a href="#__codelineno-48-2" id="__codelineno-48-2" name="__codelineno-48-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>filename
+</span><span id="__line__-48-3"><a href="#__codelineno-48-3" id="__codelineno-48-3" name="__codelineno-48-3"></a>
+</span><span id="__line__-48-4"><a href="#__codelineno-48-4" id="__codelineno-48-4" name="__codelineno-48-4"></a><span class="c1"># Отмена последнего коммита (сохраняя изменения)</span>
+</span><span id="__line__-48-5"><a href="#__codelineno-48-5" id="__codelineno-48-5" name="__codelineno-48-5"></a>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD^
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Просмотр изменений:
+<div class="highlight"><pre><span></span><code><span id="__line__-49-1"><a href="#__codelineno-49-1" id="__codelineno-49-1" name="__codelineno-49-1"></a><span class="c1"># Показать изменения в определённом коммите</span>
+</span><span id="__line__-49-2"><a href="#__codelineno-49-2" id="__codelineno-49-2" name="__codelineno-49-2"></a>git<span class="w"> </span>show<span class="w"> </span>commit_hash
+</span><span id="__line__-49-3"><a href="#__codelineno-49-3" id="__codelineno-49-3" name="__codelineno-49-3"></a>
+</span><span id="__line__-49-4"><a href="#__codelineno-49-4" id="__codelineno-49-4" name="__codelineno-49-4"></a><span class="c1"># Показать кто менял каждую строку</span>
+</span><span id="__line__-49-5"><a href="#__codelineno-49-5" id="__codelineno-49-5" name="__codelineno-49-5"></a>git<span class="w"> </span>blame<span class="w"> </span>filename
+</span></code></pre></div></p>
+</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "content.code.annotate", "search.highlight", "search.suggest", "content.code.copy", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
