@@ -114,3 +114,70 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   margin: 1.5rem 0;
 }
+
+/* Карточки для структурирования информации */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.grid.cards > * {
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.03);
+}
+
+/* Иконки для внешних ссылок */
+.md-typeset a[href^="http"]::after {
+  content: "↗";
+  font-size: 1.1em;
+  margin-left: 0.1em;
+  opacity: 0.7;
+}
+
+/* Блоки с процессами */
+.md-typeset .success {
+  border-color: #3fb950 !important;
+  background: rgba(63, 185, 80, 0.1) !important;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+
+/* Стили для таблицы с документами */
+.docs-table {
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.docs-table .md-button {
+  /* Сохраняем оригинальные стили из вашего CSS */
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95em;
+  transition: all 0.2s ease;
+  border: 1px solid var(--md-primary-fg-color);
+  background: var(--md-primary-fg-color); /* Возвращаем исходную заливку */
+  color: #fff; /* Белый текст как в оригинале */
+}
+
+.docs-table .md-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+  /* Сохраняем оригинальный ховер */
+  background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+}
+
+@media (max-width: 760px) {
+  .docs-table {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

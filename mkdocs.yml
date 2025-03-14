@@ -12,6 +12,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
+    - content.tabs
     - content.code.annotate
     - search.highlight
     - search.suggest
@@ -42,6 +43,9 @@ extra_css:
 
 nav:
   - Главная: index.md
+  - Студенту:
+    - "Стипендии и иные виды материальной поддержки": SPHTI_www\Стипендии и иные виды материальной поддержки.md
+    - "Офицальный сайт": https://www.sphti.ru
   - Git Система:
     - Глава 1:
       - "1.1 Скачивание и установка Git": Git-system/Глава 1/1.1 Скачивание и установка Git.md
