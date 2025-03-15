@@ -11,60 +11,49 @@
   --md-code-bg-color: #161b22;       /* Фон блоков кода */
 }
 
-/* ======================== */
-/* Информационные блоки (Admonitions) */
-/* ======================== */
+/* extra.css */
+/* Базовые стили для всех блоков */
 .md-typeset .admonition {
-  border-left: 4px solid;
-  background: rgba(255, 255, 255, 0.03);
-  margin: 1.5rem 0;
-  padding: 1.2rem 1.5rem 1.2rem 4.5rem;
-  position: relative;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-left-width: 4px !important;
+  box-shadow: none !important;
 }
 
-.md-typeset .admonition::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 1.8em;
-  position: absolute;
-  left: 1.5rem;
-  top: 1.2rem;
-}
-
+/* Убираем фон и границы у заголовков */
 .md-typeset .admonition-title {
-  display: none !important;
+  background: transparent !important;
+  border: none !important;
+  padding-left: 2rem;
 }
 
-/* Note (синий) */
-.md-typeset .admonition.note {
-  border-color: #2f81f7;
-  background: rgba(47, 129, 247, 0.08);
-}
-.md-typeset .admonition.note::before {
-  content: "\f05a"; /* info-circle */
-  color: #2f81f7;
+/* Иконки для типов блоков */
+.md-typeset .admonition-title::before {
+  color: inherit !important; /* Цвет иконки будет браться из типа блока */
 }
 
-/* Tip (зелёный) */
-.md-typeset .admonition.tip {
-  border-color: #3fb950;
-  background: rgba(63, 185, 80, 0.08);
+/* Success (зелёный) */
+.md-typeset .success {
+  border-left-color: #00C853 !important;
 }
-.md-typeset .admonition.tip::before {
-  content: "\f0eb"; /* lightbulb */
-  color: #3fb950;
+.md-typeset .success .admonition-title::before {
+  content: "\e86c"; /* Иконка check_circle */
+}
+
+/* Tip (голубой) */
+.md-typeset .tip {
+  border-left-color: #00B8D4 !important;
+}
+.md-typeset .tip .admonition-title::before {
+  content: "\e80c"; /* Иконка lightbulb */
 }
 
 /* Warning (оранжевый) */
-.md-typeset .admonition.warning {
-  border-color: #ff9f1c;
-  background: rgba(255, 159, 28, 0.08);
+.md-typeset .warning {
+  border-left-color: #FF9100 !important;
 }
-.md-typeset .admonition.warning::before {
-  content: "\f071"; /* exclamation-triangle */
-  color: #ff9f1c;
+.md-typeset .warning .admonition-title::before {
+  content: "\e002"; /* Иконка warning */
 }
 
 
@@ -153,7 +142,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
-  overflow-x: auto;
 }
 
 .docs-table .md-button {
@@ -181,3 +169,4 @@
     gap: 12px;
   }
 }
+
