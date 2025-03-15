@@ -170,3 +170,62 @@
   }
 }
 
+/* Большие кнопки меню */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.menu-button {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid var(--md-primary-fg-color);
+  background: rgba(35, 134, 54, 0.1);
+  transition: all 0.3s ease;
+  min-height: 200px;
+  text-align: center;
+  color: var(--md-default-fg-color) !important;
+}
+
+.menu-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  background: rgba(35, 134, 54, 0.2);
+  border-color: var(--md-accent-fg-color);
+}
+
+.menu-button::before {
+  font-family: 'Material Icons';
+  font-size: 3rem !important;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* Адаптивность */
+@media (max-width: 760px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-button {
+    min-height: 160px;
+    padding: 1.5rem;
+  }
+}
+
+/* Быстрые ссылки */
+.quick-links {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.md-button {
+  margin: 0 0.5rem;
+  padding: 0.8rem 1.5rem;
+}
