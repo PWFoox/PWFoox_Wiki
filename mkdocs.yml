@@ -22,10 +22,15 @@ theme:
 
 plugins:
   - search
-  - mermaid2
+  - mermaid2:
+      arguments:
+        theme: dark
+        flowchart:
+          curve: linear
 
 markdown_extensions:
   - admonition
+  - pymdownx.superfences
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
