@@ -229,3 +229,42 @@
   margin: 0 0.5rem;
   padding: 0.8rem 1.5rem;
 }
+
+/* Кнопка переключения темы */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  padding: 0.4rem;
+  transition: opacity 0.3s;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Кнопка "Наверх" */
+#scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: none;
+  transition: all 0.3s ease;
+}
+
+#scroll-top:hover {
+  transform: scale(1.1);
+  background: var(--md-accent-fg-color);
+}
