@@ -10,6 +10,12 @@ theme:
     text: 'Roboto'
     code: 'Roboto Mono'
   features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
     - navigation.tabs
     - content.tabs
     - content.code.annotate
@@ -18,6 +24,20 @@ theme:
     - content.code.copy
     - content.tooltips #Для С помощью <abbr title="Система контроля версий">SCV</abbr> можно управлять кодом.
   #logo: assets/logo.png
+
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-repo
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/your-channel
+  generator: false
+  status:
+    new: Недавно добавлено
+    deprecated: Устарело
 
 plugins:
   - search

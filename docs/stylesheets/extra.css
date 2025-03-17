@@ -357,3 +357,76 @@
   height: auto;
 }
 
+/* Добавить анимации */
+.md-typeset {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Анимация для изображений */
+.md-typeset img {
+  transition: transform 0.3s ease;
+}
+
+.md-typeset img:hover {
+  transform: scale(1.02);
+}
+
+
+/* Карточки статей */
+.md-card {
+  background-color: var(--md-code-bg-color);
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.md-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Прогресс чтения */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--md-primary-fg-color);
+  z-index: 1000;
+}
+
+/* Улучшенные таблицы */
+.md-typeset table:not([class]) {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: white;
+}
+
+
+/* Кастомные заметки */
+.note-important {
+  border-left: 4px solid #f44336;
+  background: rgba(244,67,54,0.1);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.note-tip {
+  border-left: 4px solid #4caf50;
+  background: rgba(76,175,80,0.1);
+  padding: 1rem;
+  margin: 1rem 0;
+}
