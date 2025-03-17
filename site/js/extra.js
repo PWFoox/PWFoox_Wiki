@@ -29,6 +29,58 @@ function createScrollTopButton() {
     });
 }
 
+// Добавить анимацию появления элементов при скролле
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    elements.forEach(element => observer.observe(element));
+}
+
+// Прогресс чтения страницы
+function addReadingProgress() {
+    const progress = document.createElement('div');
+    progress.className = 'reading-progress';
+    document.body.appendChild(progress);
+    
+    window.addEventListener('scroll', () => {
+        const percent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        progress.style.width = `${percent}%`;
+    });
+}
+
+
+// Время чтения
+function addReadingTime() {
+    const content = document.querySelector('.md-content__inner');
+    const words = content.textContent.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / 200);
+    
+    const timeElement = document.createElement('div');
+    timeElement.className = 'reading-time';
+    timeElement.innerHTML = `Время чтения: ${minutes} мин`;
+    
+    content.insertBefore(timeElement, content.firstChild);
+}
+
+
+
+// Инициализация
+document.addEventListener('DOMContentLoaded', () => {
+    addReadingTime();
+    addArticleRating();
+    enhanceCodeCopy();
+    generateTOC();
+});
+
+
 // Инициализация
 document.addEventListener('DOMContentLoaded', () => {
     // Восстановление темы
