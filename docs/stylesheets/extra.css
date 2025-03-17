@@ -308,3 +308,52 @@
   color: var(--md-default-fg-color);
   font-size: 14px;
 }
+
+/* Оптимизация для Telegram */
+:root {
+  --tg-theme-bg-color: var(--md-default-bg-color);
+  --tg-theme-text-color: var(--md-default-fg-color);
+  --tg-theme-button-color: var(--md-primary-fg-color);
+  --tg-theme-button-text-color: #ffffff;
+}
+
+/* Адаптивная навигация */
+.md-header {
+  height: 56px;
+}
+
+.md-nav {
+  font-size: 16px;
+}
+
+/* Компактные отступы */
+.md-typeset {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.md-typeset h1 {
+  margin: 1em 0 0.5em;
+}
+
+.md-typeset h2 {
+  margin: 0.8em 0 0.4em;
+}
+
+/* Улучшенная читаемость кода */
+.md-typeset code {
+  font-size: 14px;
+  padding: 2px 6px;
+}
+
+/* Адаптивные таблицы */
+.md-typeset table {
+  font-size: 14px;
+}
+
+/* Оптимизация изображений */
+.md-typeset img {
+  max-width: 100%;
+  height: auto;
+}
+
