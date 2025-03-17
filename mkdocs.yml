@@ -48,6 +48,13 @@ plugins:
           curve: linear
 
 markdown_extensions:
+  - def_list
+  - footnotes
+  - tables
+  - meta
+  - md_in_html
+  - attr_list
+  - abbr
   - admonition
   - pymdownx.superfences
   - pymdownx.details

@@ -430,3 +430,25 @@
   padding: 1rem;
   margin: 1rem 0;
 }
+
+
+/* Улучшенная навигация */
+.md-nav__link {
+  position: relative;
+  padding: 0.2em 0;
+}
+
+.md-nav__link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--md-primary-fg-color);
+  transition: width 0.3s;
+}
+
+.md-nav__link:hover:before {
+  width: 100%;
+}
