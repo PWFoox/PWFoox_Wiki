@@ -49,3 +49,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
     createScrollTopButton();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    let tg = window.Telegram.WebApp;
+    
+    // Расширяем на весь экран
+    tg.expand();
+    
+    // Устанавливаем основной цвет
+    tg.setHeaderColor('#0d1117');
+    
+    // Обработка внешних ссылок
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            tg.openLink(e.target.href);
+        });
+    });
+    
+    // Улучшенная навигация
+    const mainButton = tg.MainButton;
+    mainButton.setText('Вернуться в меню');
+    mainButton.onClick(() => {
+        window.location.href = '/';
+    });
+    
+    // Показываем кнопку только на внутренних страницах
+    if (window.location.pathname !== '/') {
+        mainButton.show();
+    }
+    
+    // Поддержка жестов
+    let touchStart = null;
+    document.addEventListener('touchstart', e => {
+        touchStart = e.touches[0].clientX;
+    });
+    
+    document.addEventListener('touchend', e => {
+        if (!touchStart) return;
+        
+        const touchEnd = e.changedTouches[0].clientX;
+        const diff = touchStart - touchEnd;
+        
+        if (Math.abs(diff) > 100) {
+            if (diff > 0) {
+                // Свайп влево
+                history.forward();
+            } else {
+                // Свайп вправо
+                history.back();
+            }
+        }
+        touchStart = null;
+    });
+});
